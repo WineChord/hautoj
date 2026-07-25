@@ -93,7 +93,16 @@ def check_external(link: Link, reporter: Reporter) -> None:
         if SENSITIVE_QUERY_KEYS.fullmatch(key):
             reporter.add(location, f"外部链接包含敏感查询参数名：{key}")
     if link.is_image:
-        reporter.add(location, "题面图片必须镜像到仓库，禁止远程热链")
+        first_party_prefix = "/hautoj/assets/problem-images/"
+        if (
+            parsed.hostname == "www.wineandchord.com"
+            and parsed.path.startswith(first_party_prefix)
+        ):
+            mirrored = ROOT / "docs" / parsed.path.removeprefix("/hautoj/")
+            if not mirrored.is_file():
+                reporter.add(location, "第一方题面图片链接缺少对应仓库镜像")
+        else:
+            reporter.add(location, "题面图片必须镜像到仓库，禁止远程热链")
     if parsed.hostname == "acm.haut.edu.cn":
         if parsed.path == "/problem.php" and not OFFICIAL_PROBLEM.fullmatch(target):
             reporter.add(location, "HAUTOJ 原题链接必须使用规范 HTTPS 地址")

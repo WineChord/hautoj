@@ -100,7 +100,7 @@ tags: ["模拟、枚举与构造"]
 
 --8<-- "includes/problems/haut-1570.md"
 
-### PID 1884 · 9nine~九次九日九重色
+### PID 1884 · 9nine\~九次九日九重色
 
 [查看完整题解](../problems/1884.md) · 出现于 1 场周赛
 

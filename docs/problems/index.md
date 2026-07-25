@@ -47,7 +47,7 @@
 | 1243 | [简单的数学问题](1243.md) | 进阶 | [入门语法、输入输出与格式](../topics/syntax-io.md) | 1 |
 | 1244 | [神奇的井](1244.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1245 | [cds的大大大阶乘](1245.md) | 基础提高 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
-| 1246 | [ykc`s easy exam](1246.md) | 基础提高 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
+| 1246 | [ykc\`s easy exam](1246.md) | 基础提高 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
 | 1248 | [最小的距离之和](1248.md) | 基础提高 | [排序、二分与区间](../topics/sorting-binary-search.md) | 1 |
 | 1249 | [zy最爱的足球赛](1249.md) | 进阶 | [贪心与博弈](../topics/greedy-games.md) | 1 |
 | 1250 | [Simple学长玩游戏](1250.md) | 进阶 | [模拟、枚举与构造](../topics/simulation-enumeration.md) | 1 |
@@ -201,11 +201,11 @@
 | 1512 | [zp与草系道馆](1512.md) | 进阶 | [贪心与博弈](../topics/greedy-games.md) | 1 |
 | 1513 | [zp与水系道馆](1513.md) | 进阶 | [搜索、图论与树](../topics/search-graphs-trees.md) | 1 |
 | 1514 | [棋盘上的米粒](1514.md) | 基础提高 | [入门语法、输入输出与格式](../topics/syntax-io.md) | 1 |
-| 1515 | [不一样的蛋糕](1515.md) | 进阶 | [贪心与博弈](../topics/greedy-games.md) | 1 |
-| 1516 | [HJ病毒](1516.md) | 进阶 | [入门语法、输入输出与格式](../topics/syntax-io.md) | 1 |
+| 1515 | [不一样的蛋糕](1515.md) | 进阶 | [排序、二分与区间](../topics/sorting-binary-search.md) | 1 |
+| 1516 | [HJ病毒](1516.md) | 进阶 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
 | 1517 | [第k大分数（加强版）](1517.md) | 进阶 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
 | 1518 | [最小的整数](1518.md) | 进阶 | [贪心与博弈](../topics/greedy-games.md) | 1 |
-| 1519 | [第k大分数（简单版）](1519.md) | 进阶 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
+| 1519 | [第k大分数（简单版）](1519.md) | 进阶 | [排序、二分与区间](../topics/sorting-binary-search.md) | 1 |
 | 1520 | [Help Me！！！！！！](1520.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1522 | [抓牛](1522.md) | 进阶 | [搜索、图论与树](../topics/search-graphs-trees.md) | 1 |
 | 1523 | [读书](1523.md) | 基础提高 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
@@ -285,7 +285,7 @@
 | 1705 | [人生的抉择](1705.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1706 | [小锋卖瓜](1706.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1707 | [子序列和](1707.md) | 进阶 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
-| 1708 | [对称括号序列](1708.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
+| 1708 | [对称括号序列](1708.md) | 进阶 | [动态规划](../topics/dynamic-programming.md) | 1 |
 | 1709 | [爱因斯坦光电效应](1709.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1710 | [图书馆信息管理系统](1710.md) | 基础提高 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1711 | [这年头难道有人不喜欢签到吗？](1711.md) | 进阶 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
@@ -300,7 +300,7 @@
 | 1721 | [爬山](1721.md) | 基础提高 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1722 | [游戏](1722.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1723 | [你又是个好人](1723.md) | 进阶 | [排序、二分与区间](../topics/sorting-binary-search.md) | 1 |
-| 1724 | [结束了(hard version)](1724.md) | 进阶 | [贪心与博弈](../topics/greedy-games.md) | 1 |
+| 1724 | [结束了(hard version)](1724.md) | 进阶 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
 | 1725 | [结束了(easy version)](1725.md) | 基础提高 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
 | 1726 | [想象之中](1726.md) | 基础提高 | [搜索、图论与树](../topics/search-graphs-trees.md) | 1 |
 | 1727 | [你是人间四月天](1727.md) | 进阶 | [贪心与博弈](../topics/greedy-games.md) | 1 |
@@ -310,11 +310,11 @@
 | 1731 | [年少有为](1731.md) | 进阶 | [搜索、图论与树](../topics/search-graphs-trees.md) | 1 |
 | 1732 | [交换余生](1732.md) | 基础提高 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1733 | [突然之间](1733.md) | 进阶 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
-| 1734 | [似乎在梦里见过那样](1734.md) | 基础提高 | [搜索、图论与树](../topics/search-graphs-trees.md) | 1 |
+| 1734 | [似乎在梦里见过那样](1734.md) | 基础提高 | [计算几何、概率与综合](../topics/geometry-probability.md) | 1 |
 | 1735 | [那真是太令人高兴了](1735.md) | 基础提高 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1736 | [已经没有什么好怕的了](1736.md) | 入门 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
 | 1737 | [奇迹魔法都是存在的](1737.md) | 基础提高 | [数据结构](../topics/data-structures.md) | 1 |
-| 1738 | [怎么可能会后悔](1738.md) | 进阶 | [数据结构](../topics/data-structures.md) | 1 |
+| 1738 | [怎么可能会后悔](1738.md) | 进阶 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
 | 1739 | [这种事绝对很奇怪啊](1739.md) | 进阶 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
 | 1740 | [你能面对真正的内心吗](1740.md) | 基础提高 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1741 | [我，真是个笨蛋](1741.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
@@ -335,7 +335,7 @@
 | 1756 | [挑选礼物，但是收礼人](1756.md) | 基础提高 | [数组、字符串与双指针](../topics/arrays-strings.md) | 2 |
 | 1757 | [表白](1757.md) | 基础提高 | [数组、字符串与双指针](../topics/arrays-strings.md) | 2 |
 | 1758 | [约会？干饭！](1758.md) | 基础提高 | [贪心与博弈](../topics/greedy-games.md) | 2 |
-| 1759 | [免费餐食 ^o^y](1759.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
+| 1759 | [免费餐食 \^o\^y](1759.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1760 | [好数](1760.md) | 基础提高 | [数组、字符串与双指针](../topics/arrays-strings.md) | 2 |
 | 1761 | [lycoris](1761.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 2 |
 | 1762 | [喂喂，你知道魔法少女的这个传闻吗？](1762.md) | 进阶 | [入门语法、输入输出与格式](../topics/syntax-io.md) | 1 |
@@ -389,7 +389,7 @@
 | 1823 | [排队](1823.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1824 | [jxh和lhy的决斗](1824.md) | 进阶 | [入门语法、输入输出与格式](../topics/syntax-io.md) | 1 |
 | 1825 | [小明的人生难题](1825.md) | 入门 | [入门语法、输入输出与格式](../topics/syntax-io.md) | 1 |
-| 1826 | [小明的午餐难题](1826.md) | 进阶 | [数学、数论与组合](../topics/math-number-theory.md) | 2 |
+| 1826 | [小明的午餐难题](1826.md) | 进阶 | [入门语法、输入输出与格式](../topics/syntax-io.md) | 2 |
 | 1827 | [小明的内卷日](1827.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1828 | [小明的数字](1828.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 2 |
 | 1829 | [小明的打怪游戏](1829.md) | 进阶 | [排序、二分与区间](../topics/sorting-binary-search.md) | 2 |
@@ -433,7 +433,7 @@
 | 1872 | [ACMer](1872.md) | 入门 | [入门语法、输入输出与格式](../topics/syntax-io.md) | 1 |
 | 1873 | [Stock Exchange(Easy Version)](1873.md) | 基础提高 | [入门语法、输入输出与格式](../topics/syntax-io.md) | 1 |
 | 1874 | [Stock Exchange(Hard Version)](1874.md) | 基础提高 | [入门语法、输入输出与格式](../topics/syntax-io.md) | 1 |
-| 1875 | [/\](1875.md) | 基础提高 | [入门语法、输入输出与格式](../topics/syntax-io.md) | 1 |
+| 1875 | [/\\](1875.md) | 基础提高 | [入门语法、输入输出与格式](../topics/syntax-io.md) | 1 |
 | 1876 | [BOX](1876.md) | 基础提高 | [搜索、图论与树](../topics/search-graphs-trees.md) | 1 |
 | 1877 | [数学考试](1877.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1878 | [200个数字](1878.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
@@ -442,7 +442,7 @@
 | 1881 | [Raging Loop](1881.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1882 | [Senren Banka](1882.md) | 基础提高 | [贪心与博弈](../topics/greedy-games.md) | 1 |
 | 1883 | [Haut校草](1883.md) | 基础提高 | [入门语法、输入输出与格式](../topics/syntax-io.md) | 1 |
-| 1884 | [9nine~九次九日九重色](1884.md) | 基础提高 | [模拟、枚举与构造](../topics/simulation-enumeration.md) | 1 |
+| 1884 | [9nine\~九次九日九重色](1884.md) | 基础提高 | [模拟、枚举与构造](../topics/simulation-enumeration.md) | 1 |
 | 1885 | [星空列车与白的旅行](1885.md) | 进阶 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
 | 1886 | [NEEDY GIRL OVERDOSE](1886.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1887 | [阿拉德的冒险者](1887.md) | 进阶 | [数据结构](../topics/data-structures.md) | 1 |
@@ -452,7 +452,7 @@
 | 1891 | [简单的运算](1891.md) | 基础提高 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1892 | [哥德巴赫猜想](1892.md) | 进阶 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
 | 1893 | [分解质因数](1893.md) | 基础提高 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
-| 1894 | [倾 ​盆 的 雨 下 了 一 整 夜](1894.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
+| 1894 | [倾 盆 的 雨 下 了 一 整 夜](1894.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1895 | [神奇的数字](1895.md) | 进阶 | [排序、二分与区间](../topics/sorting-binary-search.md) | 1 |
 | 1896 | [尖塔第四强的糕手](1896.md) | 进阶 | [贪心与博弈](../topics/greedy-games.md) | 1 |
 | 1897 | [天杀的二进制！](1897.md) | 基础提高 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
@@ -461,7 +461,7 @@
 | 1901 | [Set](1901.md) | 进阶 | [数据结构](../topics/data-structures.md) | 1 |
 | 1902 | [you love 1203!](1902.md) | 基础提高 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
 | 1903 | [幂幂幂](1903.md) | 基础提高 | [模拟、枚举与构造](../topics/simulation-enumeration.md) | 1 |
-| 1904 | [山雨欲来！](1904.md) | 基础提高 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
+| 1904 | [山雨欲来！](1904.md) | 基础提高 | [动态规划](../topics/dynamic-programming.md) | 1 |
 | 1905 | [Two movies影评](1905.md) | 进阶 | [贪心与博弈](../topics/greedy-games.md) | 1 |
 | 1906 | [命运之桥](1906.md) | 基础提高 | [贪心与博弈](../topics/greedy-games.md) | 1 |
 | 1907 | [旅人分宝](1907.md) | 基础提高 | [贪心与博弈](../topics/greedy-games.md) | 1 |
@@ -470,7 +470,7 @@
 | 1910 | [恶魔](1910.md) | 进阶 | [数据结构](../topics/data-structures.md) | 1 |
 | 1911 | [时间加速器](1911.md) | 进阶 | [模拟、枚举与构造](../topics/simulation-enumeration.md) | 1 |
 | 1912 | [切巧克力](1912.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
-| 1913 | [A*B](1913.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
+| 1913 | [A\*B](1913.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1919 | [小唐的密码](1919.md) | 基础提高 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1923 | [计算罚时](1923.md) | 入门 | [入门语法、输入输出与格式](../topics/syntax-io.md) | 1 |
 | 1924 | [诚信参赛](1924.md) | 入门 | [入门语法、输入输出与格式](../topics/syntax-io.md) | 1 |
@@ -505,7 +505,7 @@
 | 1954 | [AK路上的绊脚山](1954.md) | 基础提高 | [排序、二分与区间](../topics/sorting-binary-search.md) | 1 |
 | 1955 | [Hello,World!](1955.md) | 基础提高 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1957 | [A-B](1957.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
-| 1959 | [直播间红包雨抢券赛](1959.md) | 基础提高 | [贪心与博弈](../topics/greedy-games.md) | 1 |
+| 1959 | [直播间红包雨抢券赛](1959.md) | 基础提高 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
 | 1960 | [NASA的食物补给](1960.md) | 基础提高 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1961 | [时空快递的 “跨天送达”](1961.md) | 基础提高 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1963 | [冥界的人员统计](1963.md) | 基础提高 | [数据结构](../topics/data-structures.md) | 1 |

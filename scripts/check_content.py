@@ -78,6 +78,261 @@ REQUIRED_SNIPPET_SECTIONS = {
     "思路": re.compile(r"\*\*(?:思路|核心思路|解题思路)\*\*"),
     "复杂度": re.compile(r"\*\*复杂度\*\*"),
 }
+IMAGE_PLACEHOLDER = re.compile(
+    r"(?i)(?:\\?\[|&#(?:0*91|x0*5b);|&lbrack;|［)\s*图片\s*[:：]"
+)
+PRIVATE_RAW_URL = re.compile(
+    r"(?i)https?://(?:localhost|0\.0\.0\.0|127(?:\.\d{1,3}){3}|"
+    r"10(?:\.\d{1,3}){3}|192\.168(?:\.\d{1,3}){2}|"
+    r"172\.(?:1[6-9]|2\d|3[01])(?:\.\d{1,3}){2})"
+    r"(?::\d+)?(?:[/?#][^\s<>()]*)?"
+)
+STANDALONE_C_COMMENT = re.compile(r"/\*.*?\*/", re.S)
+LATEX_COMMAND = re.compile(
+    r"\\(?:displaystyle|frac|sum|left|right|leq|geq|cdot|times|sqrt|"
+    r"begin|end|text|mathrm|operatorname|lfloor|rfloor)\b"
+)
+DOUBLE_ESCAPED_LATEX = re.compile(
+    r"\\\\(?:displaystyle|frac|sum|left|right|leq|geq|cdot|times|sqrt|"
+    r"begin|end|text|mathrm|operatorname|lfloor|rfloor)\b"
+)
+EMBEDDED_FIELD_HEADING = re.compile(
+    r"(?m)^(?:题面提示|题意摘要|输入要点|输出要点)\s*[:：]\s*"
+    r"#{1,6}\s+\S|^#{1,6}\s+(?:样例说明|输入样例|输出样例)\s*[:：]?\s*$"
+)
+UNTYPED_SOURCE = re.compile(
+    r"(?im)^\s*(?:[-+*]\s+|\d+[.)]\s+)?"
+    r"(?:#\s*include\b|using\s+namespace\s+std\s*;|"
+    r"(?:int|signed)\s+main\s*\()|"
+    r"(?:核心处理|核心思路|题意摘要|输入要点|输出要点|题面提示)"
+    r"\s*[:：][^\n]*(?:#\s*include\b|using\s+namespace\s+std\s*;|"
+    r"(?:int|signed)\s+main\s*\(|\b(?:scanf|printf)\s*\([^;\n]*\)\s*;"
+    r"|\breturn\s+0\s*;)"
+)
+ANGLE_TOKEN = re.compile(r"<(?P<body>[^<>\r\n]+)>")
+ALLOWED_HTML_TAGS = {
+    "a",
+    "abbr",
+    "address",
+    "article",
+    "aside",
+    "audio",
+    "b",
+    "bdi",
+    "bdo",
+    "blockquote",
+    "br",
+    "button",
+    "canvas",
+    "caption",
+    "center",
+    "cite",
+    "code",
+    "col",
+    "colgroup",
+    "data",
+    "datalist",
+    "dd",
+    "del",
+    "details",
+    "dfn",
+    "div",
+    "dl",
+    "dt",
+    "em",
+    "fieldset",
+    "figcaption",
+    "figure",
+    "footer",
+    "form",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "header",
+    "hr",
+    "i",
+    "iframe",
+    "img",
+    "input",
+    "ins",
+    "kbd",
+    "label",
+    "legend",
+    "li",
+    "main",
+    "map",
+    "mark",
+    "menu",
+    "meter",
+    "nav",
+    "noscript",
+    "object",
+    "ol",
+    "optgroup",
+    "option",
+    "output",
+    "p",
+    "picture",
+    "pre",
+    "progress",
+    "q",
+    "rp",
+    "rt",
+    "ruby",
+    "s",
+    "samp",
+    "script",
+    "section",
+    "select",
+    "slot",
+    "small",
+    "source",
+    "span",
+    "strong",
+    "style",
+    "sub",
+    "summary",
+    "sup",
+    "table",
+    "tbody",
+    "td",
+    "template",
+    "textarea",
+    "tfoot",
+    "th",
+    "thead",
+    "time",
+    "tr",
+    "u",
+    "ul",
+    "var",
+    "video",
+    "wbr",
+}
+SUPERSCRIPT_COLLISION_PIDS = {
+    "1211",
+    "1255",
+    "1348",
+    "1422",
+    "1725",
+    "1743",
+    "1759",
+    "1760",
+    "1837",
+    "1841",
+    "1842",
+    "1906",
+    "1942",
+}
+SUBSCRIPT_COLLISION_PIDS = {"1708", "1761", "1762", "1826"}
+
+
+def _blank_match(match: re.Match[str]) -> str:
+    return re.sub(r"[^\r\n]", " ", match.group(0))
+
+
+def _mask_front_matter(text: str) -> str:
+    return re.sub(
+        r"\A---[ \t]*\r?\n.*?\r?\n---[ \t]*(?:\r?\n|\Z)",
+        _blank_match,
+        text,
+        count=1,
+        flags=re.S,
+    )
+
+
+def _mask_inline_code(text: str) -> str:
+    return re.sub(
+        r"(?<!\\)(`+)[^\r\n]*?(?<!\\)\1",
+        _blank_match,
+        text,
+    )
+
+
+def _mask_math(text: str) -> str:
+    text = re.sub(
+        r"(?<!\\)\$\$.*?(?<!\\)\$\$",
+        _blank_match,
+        text,
+        flags=re.S,
+    )
+    return re.sub(
+        r"(?<!\\)\$(?!\$)[^\r\n$]*?(?<!\\)\$",
+        _blank_match,
+        text,
+    )
+
+
+def mask_reader_literals(text: str, *, math: bool = True) -> str:
+    """Mask Markdown literals while preserving offsets and line numbers."""
+
+    masked = _mask_front_matter(mask_fenced_code(text))
+    masked = _mask_inline_code(masked)
+    return _mask_math(masked) if math else masked
+
+
+def _unknown_angle_token(body: str) -> bool:
+    value = body.strip()
+    if not value:
+        return False
+    if value.startswith(("http://", "https://", "mailto:", "!--", "!DOCTYPE")):
+        return False
+    if "@" in value and not re.search(r"\s", value):
+        return False
+    match = re.fullmatch(
+        r"/?\s*([A-Za-z][A-Za-z0-9-]*)(?:\s+[^<>]*)?/?\s*",
+        value,
+    )
+    return match is None or match.group(1).lower() not in ALLOWED_HTML_TAGS
+
+
+def _problem_pid(path: Path) -> str | None:
+    if path.parent.name == "problems" and path.stem.isdigit():
+        return path.stem
+    match = re.fullmatch(r"haut-(\d+)", path.stem)
+    return match.group(1) if match else None
+
+
+def reader_artifacts(text: str, *, pid: str | None = None) -> list[tuple[int, str]]:
+    """Return generated-reader prose artifacts as ``(line, kind)`` rows."""
+
+    literal_text = mask_reader_literals(text, math=False)
+    prose = _mask_math(literal_text)
+    findings: set[tuple[int, str]] = set()
+
+    def add_matches(pattern: re.Pattern[str], kind: str, source: str = prose) -> None:
+        for match in pattern.finditer(source):
+            findings.add((source.count("\n", 0, match.start()) + 1, kind))
+
+    add_matches(IMAGE_PLACEHOLDER, "image_placeholder")
+    add_matches(PRIVATE_RAW_URL, "private_raw_url")
+    add_matches(STANDALONE_C_COMMENT, "standalone_c_comment")
+    add_matches(DOUBLE_ESCAPED_LATEX, "raw_latex", literal_text)
+    add_matches(LATEX_COMMAND, "raw_latex")
+    add_matches(EMBEDDED_FIELD_HEADING, "embedded_markdown_heading")
+    add_matches(UNTYPED_SOURCE, "untyped_source")
+    for match in ANGLE_TOKEN.finditer(prose):
+        if _unknown_angle_token(match.group("body")):
+            findings.add((prose.count("\n", 0, match.start()) + 1, "unknown_raw_html"))
+
+    if pid in SUPERSCRIPT_COLLISION_PIDS:
+        add_matches(re.compile(r"(?<!\\)\^"), "markdown_superscript_collision")
+    if pid in SUBSCRIPT_COLLISION_PIDS:
+        for number, line in enumerate(prose.splitlines(), 1):
+            if len(re.findall(r"(?<!\\)~", line)) >= 2:
+                findings.add((number, "markdown_subscript_collision"))
+    if pid == "1365":
+        for number, line in enumerate(prose.splitlines(), 1):
+            if "任意一个数字" in line and re.search(r"(?<!\\)\*", line):
+                findings.add((number, "markdown_emphasis_collision"))
+    if pid == "1761":
+        for number, line in enumerate(prose.splitlines(), 1):
+            if "sakana" in line and re.search(r"(?<!\\)[*~]", line):
+                findings.add((number, "markdown_emphasis_collision"))
+    return sorted(findings)
 
 
 def integer(value: Any) -> bool:
@@ -743,6 +998,18 @@ def validate_image_manifest(
 
 
 def validate_public_text(reporter: Reporter) -> None:
+    artifact_messages = {
+        "image_placeholder": "正文不得保留图片占位符或失效图片原地址",
+        "private_raw_url": "正文包含内网或本机原始地址；内容未回显",
+        "standalone_c_comment": "正文中的 C 风格注释必须改成普通说明或放入代码块",
+        "raw_latex": "正文含未规范化的 LaTeX 命令",
+        "embedded_markdown_heading": "题面字段中嵌入了 Markdown 标题标记",
+        "untyped_source": "说明文字中混入未标注语言的源代码",
+        "unknown_raw_html": "正文含会被误解析的未知 HTML 标签",
+        "markdown_superscript_collision": "题面字符会被 Markdown 误解析为上标",
+        "markdown_subscript_collision": "题面字符会被 Markdown 误解析为下标",
+        "markdown_emphasis_collision": "题面字符会被 Markdown 误解析为强调",
+    }
     for path in iter_text_files():
         text = read_text(path, reporter)
         masked = mask_fenced_code(text) if path.suffix.lower() == ".md" else text
@@ -764,6 +1031,12 @@ def validate_public_text(reporter: Reporter) -> None:
                     reporter.add(location, "不得发布占位内容")
             if DISALLOWED_INVISIBLE.search(line):
                 reporter.add(location, "检测到双向文本控制字符")
+        if path.suffix.lower() == ".md" and not is_rule_definition:
+            for number, kind in reader_artifacts(text, pid=_problem_pid(path)):
+                reporter.add(
+                    f"{relative(path)}:{number}",
+                    artifact_messages[kind],
+                )
         if path.suffix.lower() == ".md" and path.parts[-2:-1] != ("problems",):
             # Parsing also reports unclosed fences. Problem snippets are parsed
             # separately; duplicate diagnostics would only add noise.

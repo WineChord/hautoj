@@ -12,6 +12,14 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from urllib.parse import urlsplit
 
+from content_formatting import (
+    clean_reader_text,
+    compact_reader_text,
+    markdown_blocks,
+    markdown_inline_math,
+    normalize_legacy_markup,
+)
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
@@ -173,26 +181,30 @@ def load_json(path: Path, default: object | None = None) -> object:
 
 
 def clean_source_text(value: object) -> str:
+    return clean_reader_text(value)
+
+
+def clean_literal_text(value: object) -> str:
     text = str(value or "").replace("\r\n", "\n").replace("\r", "\n")
-    text = "".join(ch for ch in text if ch == "\n" or ch == "\t" or ord(ch) >= 32)
+    text = "".join(
+        ch
+        for ch in text
+        if ch == "\n" or ch == "\t" or ord(ch) >= 32
+    )
     text = PRIVATE_URL.sub("（原题中的内网资源地址已省略）", text)
     return text.strip()
 
 
 def compact(value: object) -> str:
-    return re.sub(r"\s+", " ", clean_source_text(value)).strip()
+    return compact_reader_text(value)
 
 
 def prose(value: object) -> str:
-    text = html.escape(compact(value), quote=False)
-    return text.replace("[", "&#91;").replace("]", "&#93;")
+    return markdown_inline_math(compact(value)) or "—"
 
 
 def title_text(value: object) -> str:
-    text = prose(value)
-    for char in ("\\", "`", "*", "_", "[", "]"):
-        text = text.replace(char, "\\" + char)
-    return text
+    return prose(value)
 
 
 def table_text(value: object) -> str:
@@ -229,7 +241,10 @@ def write(path: Path, text: str) -> None:
 
 
 def fence_block(language: str, text: object, *, indent: int = 0) -> str:
-    body = clean_source_text(text).rstrip("\n")
+    body = "\n".join(
+        line.rstrip()
+        for line in clean_literal_text(text).rstrip("\n").splitlines()
+    )
     longest = max((len(run) for run in re.findall(r"`+", body)), default=0)
     marker = "`" * max(3, longest + 1)
     prefix = " " * indent
@@ -240,16 +255,21 @@ def fence_block(language: str, text: object, *, indent: int = 0) -> str:
 
 
 def normalize_explanation(value: object) -> str:
-    text = clean_source_text(value)
+    text = normalize_legacy_markup(value)
     cut = len(text)
     for pattern in (
-        r"\n\s*\d*\s*#\s*include",
-        r"\n\s*#include",
-        r"\n\s*using\s+namespace",
-        r"\n\s*int\s+main\s*\(",
+        r"(?:^|\n)\s*\d*\s*#\s*(?:include|pragma|define)\b",
+        r"(?:^|\n)\s*using\s+namespace\b",
+        r"(?:^|\n)\s*(?:int|signed|void)\s+main\s*\(",
+        r"(?:^|\n)\s*(?:AC|C\+\+|C\s*语言|参考)?\s*代码\s*[:：]?\s*$",
+        r"\bC\+\+\s*版?\s*代码\b",
+        r"(?:^|\n)\s*(?:上代码|程序表达如下|标程如下)\s*[:：]?\s*$",
+        r"(?:^|\n)\s*(?:cin|cout)\s*(?:>>|<<)",
+        r"(?:^|\n)\s*(?:else\b|while\s*\(|for\s*\(|if\s*\(|"
+        r"return\b|printf\s*\(|scanf\s*\(|[{}]\s*$)",
     ):
         match = re.search(pattern, text, re.IGNORECASE)
-        if match and match.start() >= 25:
+        if match:
             cut = min(cut, match.start())
     text = text[:cut]
     text = re.sub(r"https?://\S+", "", text)
@@ -459,6 +479,44 @@ def available_images(pid: int, image_manifest: dict) -> list[dict]:
     ]
 
 
+def unavailable_images(pid: int, image_manifest: dict) -> list[dict]:
+    return [
+        item
+        for item in image_manifest.get("images", [])
+        if isinstance(item, dict)
+        and str(item.get("problem_id")) == str(pid)
+        and item.get("status") != "available"
+    ]
+
+
+def statement_images_markdown(pid: int, image_manifest: dict) -> list[str]:
+    lines: list[str] = []
+    mirrored = available_images(pid, image_manifest)
+    unavailable = unavailable_images(pid, image_manifest)
+    if mirrored:
+        lines.extend(["", "### 题面示意图", ""])
+        for image in mirrored:
+            image_index = int(image.get("image_index") or 1)
+            lines.extend(
+                [
+                    f"![PID {pid} 题面示意图 {image_index}]"
+                    f"(../{image['path']})",
+                    "",
+                ]
+            )
+    if unavailable:
+        count = len(unavailable)
+        lines.extend(
+            [
+                "",
+                "!!! note \"题面图片状态\"",
+                f"    原题另有 {count} 张图片当前无法从公开地址稳定获取；"
+                "请在 HAUTOJ 原题页核对，不在正文展示失效地址。",
+            ]
+        )
+    return lines
+
+
 def snippet_markdown(problem: dict, validations: dict, image_manifest: dict) -> str:
     official = external_link("打开 HAUTOJ 原题 ↗", problem.get("url")) or "原题链接当前不可用"
     code = fence_block("cpp linenums=\"1\"", problem["reference_code"], indent=4)
@@ -555,15 +613,36 @@ def problem_page(
             "",
             "## 题意与输入输出",
             "",
-            f"**题意摘要**：{prose(problem.get('task_focus'))}",
+            "### 题意摘要",
             "",
-            f"**输入要点**：{prose(problem.get('input_summary') or '公开页面没有可提取的文字输入说明，请在原题页核对题面图片或特殊格式。')}",
+            markdown_blocks(problem.get("task_focus"))
+            or "公开页面没有可提取的文字题意摘要，请在原题页核对。",
             "",
-            f"**输出要点**：{prose(problem.get('output_summary') or '公开页面没有可提取的文字输出说明，请在原题页核对题面图片或特殊格式。')}",
+            "### 输入要点",
+            "",
+            markdown_blocks(
+                problem.get("input_summary")
+                or "公开页面没有可提取的文字输入说明，请在原题页核对题面图片或特殊格式。"
+            ),
+            "",
+            "### 输出要点",
+            "",
+            markdown_blocks(
+                problem.get("output_summary")
+                or "公开页面没有可提取的文字输出说明，请在原题页核对题面图片或特殊格式。"
+            ),
         ]
     )
     if problem.get("hint"):
-        lines.extend(["", f"**题面提示**：{prose(problem['hint'])}"])
+        lines.extend(
+            [
+                "",
+                "### 题面提示",
+                "",
+                markdown_blocks(problem["hint"]),
+            ]
+        )
+    lines.extend(statement_images_markdown(pid, image_manifest))
     lines.extend(["", "## 零基础先修", ""])
     lines.extend(f"- {prose(item)}" for item in primer_lines(problem))
     lines.extend(["", "## 思路推导", ""])
@@ -583,7 +662,9 @@ def problem_page(
     )
     lines.extend(f"- {prose(item)}" for item in pitfall_lines(problem))
     code = problem.get("reference_code", "")
-    if "setprecision" in code or "printf" in code:
+    if "setprecision" in code or re.search(
+        r'printf\s*\(\s*"[^"]*%[^"]*[fFeEgG]', code
+    ):
         lines.extend(
             [
                 "",
@@ -632,18 +713,6 @@ def problem_page(
             lines.extend([f"**输出 {index}**", "", fence_block("text", output), ""])
     else:
         lines.append("公开页面没有提供可成对提取的样例，请在原题页核对图片或特殊格式。")
-    mirrored = available_images(pid, image_manifest)
-    if mirrored:
-        lines.extend(["", "## 题面图片", ""])
-        for image in mirrored:
-            image_index = int(image.get("image_index") or 1)
-            lines.extend(
-                [
-                    f"![PID {pid} 题面图 {image_index}]"
-                    f"(../{image['path']})",
-                    "",
-                ]
-            )
     links = safe_source_links(problem)
     lines.extend(
         [
@@ -1271,6 +1340,7 @@ def build() -> None:
 
 - 建立 78 场新生周赛、588 个题目位置与 526 道唯一题的双路径知识库。
 - 增加逐题规范页、默认折叠摘要、C++14 高亮代码、精确样例核验状态和离线下载。
+- 增加全页“展开全部 / 收起全部”按钮；代码与题解默认收起。
 - 增加周赛时间顺序、10 个知识模块、16 周路线、竞赛 C++ 与浮点输出专题。
 """,
     )

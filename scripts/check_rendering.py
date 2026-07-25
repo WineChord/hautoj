@@ -397,7 +397,11 @@ def validate_expected_routes(
 
 def validate_runtime_assets(errors: list[str]) -> None:
     css_path = ROOT / "docs" / "stylesheets" / "extra.css"
-    script_path = ROOT / "docs" / "javascripts" / "mathjax.js"
+    math_script_path = ROOT / "docs" / "javascripts" / "mathjax.js"
+    disclosure_script_path = (
+        ROOT / "docs" / "javascripts" / "disclosure-controls.js"
+    )
+    config_path = ROOT / "mkdocs.yml"
     if not css_path.is_file():
         errors.append("docs/stylesheets/extra.css is missing")
     else:
@@ -408,13 +412,46 @@ def validate_runtime_assets(errors: list[str]) -> None:
             errors.append("extra.css lacks an explicit CJK code-font fallback")
         if "overflow-x: auto" not in css:
             errors.append("extra.css does not make long code horizontally scrollable")
-    if not script_path.is_file():
+        for marker in (
+            ".disclosure-controls__toggle",
+            "details.code-disclosure",
+            "max-width: 100%",
+        ):
+            if marker not in css:
+                errors.append(
+                    f"extra.css is missing disclosure style marker {marker}"
+                )
+    if not math_script_path.is_file():
         errors.append("docs/javascripts/mathjax.js is missing")
     else:
-        script = script_path.read_text(encoding="utf-8")
+        script = math_script_path.read_text(encoding="utf-8")
         for marker in ("window.MathJax", "document$.subscribe", "typesetPromise"):
             if marker not in script:
                 errors.append(f"mathjax.js is missing {marker}")
+    if not disclosure_script_path.is_file():
+        errors.append("docs/javascripts/disclosure-controls.js is missing")
+    else:
+        script = disclosure_script_path.read_text(encoding="utf-8")
+        for marker in (
+            "globalThis.document$",
+            "disclosure-controls__toggle",
+            "code-disclosure",
+            'closest("details")',
+            'removeAttribute("open")',
+        ):
+            if marker not in script:
+                errors.append(
+                    "disclosure-controls.js is missing required marker "
+                    f"{marker}"
+                )
+    if not config_path.is_file():
+        errors.append("mkdocs.yml is missing")
+    elif "javascripts/disclosure-controls.js" not in config_path.read_text(
+        encoding="utf-8"
+    ):
+        errors.append(
+            "mkdocs.yml does not load javascripts/disclosure-controls.js"
+        )
 
 
 class QuietHandler(SimpleHTTPRequestHandler):
@@ -649,8 +686,10 @@ def browser_audit(
                             driver.get(base_url + route)
                             wait.until(
                                 lambda current: current.execute_script(
-                                    "return !!document.querySelector("
-                                    "'article.md-content__inner')"
+                                    "const article = document.querySelector("
+                                    "'article.md-content__inner');"
+                                    "return !!article && !!article.querySelector("
+                                    "'.disclosure-controls__toggle');"
                                 )
                             )
                             driver.execute_script(
@@ -701,15 +740,69 @@ def browser_audit(
                                   "article.md-content__inner"
                                 );
                                 const problemDetails = [
-                                  ...document.querySelectorAll(
-                                    "details.problem"
+                                  ...article.querySelectorAll("details.problem")
+                                ];
+                                const allDetails = [
+                                  ...article.querySelectorAll("details")
+                                ];
+                                const codeDetails = [
+                                  ...article.querySelectorAll(
+                                    "details.code-disclosure"
+                                  )
+                                ];
+                                const controls = [
+                                  ...article.querySelectorAll(
+                                    ".disclosure-controls__toggle"
                                   )
                                 ];
                                 const cpp = [
-                                  ...document.querySelectorAll(
+                                  ...article.querySelectorAll(
                                     ".highlight.language-cpp"
                                   )
                                 ];
+                                const excludedSelector = [
+                                  ".arithmatex",
+                                  "mjx-container",
+                                  ".MathJax",
+                                  ".katex",
+                                  ".mermaid",
+                                  "[data-mermaid]"
+                                ].join(", ");
+                                const codeRoots = new Set();
+                                article.querySelectorAll(
+                                  ".highlight, pre"
+                                ).forEach((candidate) => {
+                                  const root = candidate.closest(
+                                    ".highlight"
+                                  ) || candidate;
+                                  if (!article.contains(root)) return;
+                                  if (
+                                    root.matches(excludedSelector)
+                                    || root.closest(excludedSelector)
+                                  ) return;
+                                  if (
+                                    root.matches("pre")
+                                    && !root.querySelector(":scope > code")
+                                  ) return;
+                                  codeRoots.add(root);
+                                });
+                                const orphanCodeBlocks = [...codeRoots].filter(
+                                  (block) => !block.closest("details")
+                                ).length;
+                                const nestedCodeDetails = codeDetails.filter(
+                                  (item) =>
+                                    item.parentElement
+                                      && item.parentElement.closest(
+                                        "details.code-disclosure"
+                                      )
+                                ).length;
+                                const protectedWrapped = [
+                                  ...article.querySelectorAll(
+                                    ".arithmatex, .mermaid, [data-mermaid]"
+                                  )
+                                ].filter((item) =>
+                                  item.closest("details.code-disclosure")
+                                ).length;
                                 const tokens = cpp.reduce(
                                   (total, block) =>
                                     total + block.querySelectorAll(
@@ -733,7 +826,7 @@ def browser_audit(
                                     && value !== "scroll";
                                 }).length;
                                 const mathWrappers = [
-                                  ...document.querySelectorAll(".arithmatex")
+                                  ...article.querySelectorAll(".arithmatex")
                                 ];
                                 const mathRendered = mathWrappers.filter(
                                   (wrapper) =>
@@ -742,6 +835,10 @@ def browser_audit(
                                 const code = cpp.length
                                   ? cpp[0].querySelector("code")
                                   : null;
+                                const control = controls[0] || null;
+                                const heading = article.querySelector(
+                                  ":scope > h1"
+                                );
                                 const style = getComputedStyle(document.body);
                                 return {
                                   article: !!article,
@@ -757,6 +854,38 @@ def browser_audit(
                                   openProblems: problemDetails.filter(
                                     (item) => item.open
                                   ).length,
+                                  details: allDetails.length,
+                                  openDetails: allDetails.filter(
+                                    (item) => item.open
+                                  ).length,
+                                  codeDetails: codeDetails.length,
+                                  codeDetailsWithoutSummary: codeDetails.filter(
+                                    (item) =>
+                                      item.firstElementChild?.tagName
+                                      !== "SUMMARY"
+                                  ).length,
+                                  nestedCodeDetails,
+                                  orphanCodeBlocks,
+                                  protectedWrapped,
+                                  controls: controls.length,
+                                  controlDisabled: control
+                                    ? control.disabled
+                                    : null,
+                                  controlAriaExpanded: control
+                                    ? control.getAttribute("aria-expanded")
+                                    : null,
+                                  controlText: control
+                                    ? control.textContent.trim()
+                                    : "",
+                                  controlNearTop: control
+                                    ? (
+                                        heading
+                                          ? heading.nextElementSibling
+                                            === control.parentElement
+                                          : article.firstElementChild
+                                            === control.parentElement
+                                      )
+                                    : false,
                                   cpp: cpp.length,
                                   tokens,
                                   codeFont: code
@@ -776,7 +905,7 @@ def browser_audit(
                                   ).length,
                                   mathWrappers: mathWrappers.length,
                                   mathRendered,
-                                  mathErrors: document.querySelectorAll(
+                                  mathErrors: article.querySelectorAll(
                                     "mjx-merror, .MathJax_Error"
                                   ).length
                                 };
@@ -793,6 +922,58 @@ def browser_audit(
                             if stats["openProblems"]:
                                 errors.append(
                                     f"{label}: problem details are open by default"
+                                )
+                            if stats["controls"] != 1:
+                                errors.append(
+                                    f"{label}: expected one disclosure control, "
+                                    f"found {stats['controls']}"
+                                )
+                            if not stats["controlNearTop"]:
+                                errors.append(
+                                    f"{label}: disclosure control is not directly "
+                                    "below the article heading"
+                                )
+                            if not stats["controlText"]:
+                                errors.append(
+                                    f"{label}: disclosure control has no accessible "
+                                    "text"
+                                )
+                            if stats["controlAriaExpanded"] != "false":
+                                errors.append(
+                                    f"{label}: disclosure control must default to "
+                                    'aria-expanded="false"'
+                                )
+                            expected_disabled = stats["details"] == 0
+                            if stats["controlDisabled"] != expected_disabled:
+                                errors.append(
+                                    f"{label}: disclosure control disabled state "
+                                    "does not match the page details count"
+                                )
+                            if stats["openDetails"]:
+                                errors.append(
+                                    f"{label}: {stats['openDetails']} details are "
+                                    "open by default"
+                                )
+                            if stats["orphanCodeBlocks"]:
+                                errors.append(
+                                    f"{label}: {stats['orphanCodeBlocks']} "
+                                    "standalone code blocks were not wrapped"
+                                )
+                            if stats["codeDetailsWithoutSummary"]:
+                                errors.append(
+                                    f"{label}: "
+                                    f"{stats['codeDetailsWithoutSummary']} code "
+                                    "disclosures have no native summary"
+                                )
+                            if stats["nestedCodeDetails"]:
+                                errors.append(
+                                    f"{label}: {stats['nestedCodeDetails']} code "
+                                    "disclosures are double wrapped"
+                                )
+                            if stats["protectedWrapped"]:
+                                errors.append(
+                                    f"{label}: {stats['protectedWrapped']} math or "
+                                    "Mermaid regions were wrapped as code"
                                 )
                             if stats["cpp"] and stats["tokens"] < stats["cpp"]:
                                 errors.append(
@@ -833,6 +1014,117 @@ def browser_audit(
                                     f"{label}: MathJax reported "
                                     f"{stats['mathErrors']} errors"
                                 )
+                            interaction = driver.execute_script(
+                                """
+                                const article = document.querySelector(
+                                  "article.md-content__inner"
+                                );
+                                const button = article?.querySelector(
+                                  ".disclosure-controls__toggle"
+                                );
+                                const details = article
+                                  ? [...article.querySelectorAll("details")]
+                                  : [];
+                                if (!article || !button) {
+                                  return {available: false};
+                                }
+                                if (!details.length) {
+                                  return {
+                                    available: true,
+                                    details: 0,
+                                    disabled: button.disabled,
+                                    ariaClosed:
+                                      button.getAttribute("aria-expanded"),
+                                    controls: article.querySelectorAll(
+                                      ".disclosure-controls__toggle"
+                                    ).length
+                                  };
+                                }
+                                button.click();
+                                const allOpen = details.every(
+                                  (item) => item.open
+                                );
+                                const ariaOpen = button.getAttribute(
+                                  "aria-expanded"
+                                );
+                                const codeDetails = [
+                                  ...article.querySelectorAll(
+                                    "details.code-disclosure"
+                                  )
+                                ];
+                                const copyButtons = codeDetails.flatMap(
+                                  (item) => [
+                                    ...item.querySelectorAll(".md-clipboard")
+                                  ]
+                                );
+                                const usableCopyButtons = copyButtons.filter(
+                                  (item) =>
+                                    !item.disabled
+                                    && item.getClientRects().length > 0
+                                    && getComputedStyle(item).pointerEvents
+                                      !== "none"
+                                ).length;
+                                button.click();
+                                return {
+                                  available: true,
+                                  details: details.length,
+                                  allOpen,
+                                  ariaOpen,
+                                  allClosed: details.every(
+                                    (item) => !item.open
+                                  ),
+                                  ariaClosed:
+                                    button.getAttribute("aria-expanded"),
+                                  controls: article.querySelectorAll(
+                                    ".disclosure-controls__toggle"
+                                  ).length,
+                                  codeDetails: codeDetails.length,
+                                  copyButtons: copyButtons.length,
+                                  usableCopyButtons
+                                };
+                                """
+                            )
+                            if not interaction.get("available"):
+                                errors.append(
+                                    f"{label}: disclosure control interaction "
+                                    "is unavailable"
+                                )
+                            elif interaction["details"] == 0:
+                                if not interaction["disabled"]:
+                                    errors.append(
+                                        f"{label}: empty disclosure control is "
+                                        "not disabled"
+                                    )
+                            else:
+                                if (
+                                    not interaction["allOpen"]
+                                    or interaction["ariaOpen"] != "true"
+                                ):
+                                    errors.append(
+                                        f"{label}: expand-all did not open every "
+                                        "detail and update aria-expanded"
+                                    )
+                                if (
+                                    not interaction["allClosed"]
+                                    or interaction["ariaClosed"] != "false"
+                                ):
+                                    errors.append(
+                                        f"{label}: collapse-all did not restore "
+                                        "the closed default state"
+                                    )
+                                if interaction["controls"] != 1:
+                                    errors.append(
+                                        f"{label}: disclosure interaction created "
+                                        "duplicate controls"
+                                    )
+                                if (
+                                    interaction["usableCopyButtons"]
+                                    < interaction["copyButtons"]
+                                ):
+                                    errors.append(
+                                        f"{label}: generated code disclosures "
+                                        "hide or disable an existing copy button"
+                                    )
                             palette_colors[
                                 (route, viewport_name, palette_name)
                             ] = (stats["background"], stats["foreground"])

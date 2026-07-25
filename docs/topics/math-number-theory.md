@@ -8,7 +8,7 @@ tags: ["数学、数论与组合"]
 
 先从定义和小数据找规律，再用整除、奇偶、最大公约数、取模或组合计数证明公式，并检查溢出与浮点误差。
 
-本模块共 **95** 道唯一题：入门 11 道、基础提高 33 道、进阶 51 道。
+本模块共 **96** 道唯一题：入门 11 道、基础提高 33 道、进阶 52 道。
 
 题目按难度、PID 排列。先进入完整题解独立阅读；需要快速复习时再展开摘要与代码。
 
@@ -244,12 +244,6 @@ tags: ["数学、数论与组合"]
 
 --8<-- "includes/problems/haut-1902.md"
 
-### PID 1904 · 山雨欲来！
-
-[查看完整题解](../problems/1904.md) · 出现于 1 场周赛
-
---8<-- "includes/problems/haut-1904.md"
-
 ### PID 1928 · 数字躲猫猫
 
 [查看完整题解](../problems/1928.md) · 出现于 1 场周赛
@@ -267,6 +261,12 @@ tags: ["数学、数论与组合"]
 [查看完整题解](../problems/1936.md) · 出现于 1 场周赛
 
 --8<-- "includes/problems/haut-1936.md"
+
+### PID 1959 · 直播间红包雨抢券赛
+
+[查看完整题解](../problems/1959.md) · 出现于 1 场周赛
+
+--8<-- "includes/problems/haut-1959.md"
 
 ### PID 1969 · 加and乘
 
@@ -396,17 +396,17 @@ tags: ["数学、数论与组合"]
 
 --8<-- "includes/problems/haut-1495.md"
 
+### PID 1516 · HJ病毒
+
+[查看完整题解](../problems/1516.md) · 出现于 1 场周赛
+
+--8<-- "includes/problems/haut-1516.md"
+
 ### PID 1517 · 第k大分数（加强版）
 
 [查看完整题解](../problems/1517.md) · 出现于 1 场周赛
 
 --8<-- "includes/problems/haut-1517.md"
-
-### PID 1519 · 第k大分数（简单版）
-
-[查看完整题解](../problems/1519.md) · 出现于 1 场周赛
-
---8<-- "includes/problems/haut-1519.md"
 
 ### PID 1532 · 小青的高等数学
 
@@ -486,11 +486,23 @@ tags: ["数学、数论与组合"]
 
 --8<-- "includes/problems/haut-1714.md"
 
+### PID 1724 · 结束了(hard version)
+
+[查看完整题解](../problems/1724.md) · 出现于 1 场周赛
+
+--8<-- "includes/problems/haut-1724.md"
+
 ### PID 1733 · 突然之间
 
 [查看完整题解](../problems/1733.md) · 出现于 1 场周赛
 
 --8<-- "includes/problems/haut-1733.md"
+
+### PID 1738 · 怎么可能会后悔
+
+[查看完整题解](../problems/1738.md) · 出现于 1 场周赛
+
+--8<-- "includes/problems/haut-1738.md"
 
 ### PID 1739 · 这种事绝对很奇怪啊
 
@@ -539,12 +551,6 @@ tags: ["数学、数论与组合"]
 [查看完整题解](../problems/1819.md) · 出现于 1 场周赛
 
 --8<-- "includes/problems/haut-1819.md"
-
-### PID 1826 · 小明的午餐难题
-
-[查看完整题解](../problems/1826.md) · 出现于 2 场周赛
-
---8<-- "includes/problems/haut-1826.md"
 
 ### PID 1840 · 派蒙爱吃素
 

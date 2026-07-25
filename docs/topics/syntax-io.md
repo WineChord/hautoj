@@ -474,12 +474,6 @@ tags: ["入门语法、输入输出与格式"]
 
 --8<-- "includes/problems/haut-1427.md"
 
-### PID 1516 · HJ病毒
-
-[查看完整题解](../problems/1516.md) · 出现于 1 场周赛
-
---8<-- "includes/problems/haut-1516.md"
-
 ### PID 1526 · 游戏
 
 [查看完整题解](../problems/1526.md) · 出现于 1 场周赛
@@ -557,6 +551,12 @@ tags: ["入门语法、输入输出与格式"]
 [查看完整题解](../problems/1824.md) · 出现于 1 场周赛
 
 --8<-- "includes/problems/haut-1824.md"
+
+### PID 1826 · 小明的午餐难题
+
+[查看完整题解](../problems/1826.md) · 出现于 2 场周赛
+
+--8<-- "includes/problems/haut-1826.md"
 
 ### PID 1833 · 小明的数学游戏
 

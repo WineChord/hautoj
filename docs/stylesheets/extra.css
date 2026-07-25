@@ -88,6 +88,94 @@
   text-align: end;
 }
 
+.md-typeset .disclosure-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin: -0.25rem 0 1rem;
+}
+
+.md-typeset .disclosure-controls__toggle {
+  min-height: 2.25rem;
+  max-width: 100%;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.2rem;
+  color: var(--md-accent-fg-color);
+  background: var(--md-default-bg-color);
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: center;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.md-typeset .disclosure-controls__toggle:hover {
+  border-color: var(--md-accent-fg-color);
+  background: color-mix(
+    in srgb,
+    var(--md-accent-fg-color) 7%,
+    var(--md-default-bg-color)
+  );
+}
+
+.md-typeset .disclosure-controls__toggle:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
+}
+
+.md-typeset .disclosure-controls__toggle:disabled {
+  color: var(--md-default-fg-color--light);
+  border-color: var(--md-default-fg-color--lightest);
+  background: var(--md-default-bg-color);
+  cursor: default;
+  opacity: 0.75;
+}
+
+.md-typeset details.code-disclosure {
+  min-width: 0;
+  max-width: 100%;
+  margin: 1em 0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.2rem;
+  background: var(--md-code-bg-color);
+}
+
+.md-typeset details.code-disclosure > summary {
+  padding: 0.55rem 0.75rem;
+  color: var(--md-default-fg-color--light);
+  background: color-mix(
+    in srgb,
+    var(--md-code-bg-color) 92%,
+    var(--md-default-fg-color) 8%
+  );
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.md-typeset details.code-disclosure[open] > summary {
+  border-block-end: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset details.code-disclosure > .highlight,
+.md-typeset details.code-disclosure > pre {
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+}
+
+.md-typeset details.code-disclosure .highlighttable {
+  max-width: 100%;
+}
+
+.md-typeset details.code-disclosure .md-clipboard {
+  z-index: 1;
+}
+
 @media screen and (max-width: 44.984375em) {
   .md-typeset .metric-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -112,5 +200,18 @@
 
   .md-typeset .problem-nav > * {
     text-align: start !important;
+  }
+
+  .md-typeset .disclosure-controls {
+    justify-content: stretch;
+    margin-block-start: 0;
+  }
+
+  .md-typeset .disclosure-controls__toggle {
+    width: 100%;
+  }
+
+  .md-typeset details.code-disclosure > summary {
+    padding-inline: 0.65rem;
   }
 }
