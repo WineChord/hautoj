@@ -1,0 +1,116 @@
+:root {
+  --md-text-font: "PingFang SC", "Noto Sans CJK SC", "Noto Sans SC",
+    "Microsoft YaHei", system-ui, sans-serif;
+  --md-code-font: "SFMono-Regular", Menlo, Monaco, Consolas,
+    "Liberation Mono", "Noto Sans Mono CJK SC", "Noto Sans CJK SC",
+    "Microsoft YaHei", monospace;
+}
+
+.md-typeset {
+  overflow-wrap: break-word;
+}
+
+.md-typeset code,
+.md-typeset pre,
+.md-typeset .highlight {
+  max-width: 100%;
+}
+
+.md-typeset code {
+  font-variant-ligatures: none;
+}
+
+.md-typeset .highlight pre,
+.md-typeset pre {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.md-typeset .highlight code,
+.md-typeset pre code {
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.md-typeset .md-typeset__table {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.md-typeset .problem-source {
+  font-weight: 600;
+}
+
+.md-typeset .metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: 1.5rem 0 2rem;
+  border-block: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .metric-grid div {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.9rem 1rem;
+  text-align: center;
+}
+
+.md-typeset .metric-grid div + div {
+  border-inline-start: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .metric-grid strong {
+  color: var(--md-accent-fg-color);
+  font-size: 1.45rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.md-typeset .metric-grid span {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.72rem;
+}
+
+.md-typeset details.problem {
+  border-color: var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .problem-nav {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+  margin-block: 1rem;
+}
+
+.md-typeset .problem-nav > :last-child {
+  text-align: end;
+}
+
+@media screen and (max-width: 44.984375em) {
+  .md-typeset .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md-typeset .metric-grid div + div {
+    border-inline-start: 0;
+  }
+
+  .md-typeset .metric-grid div:nth-child(even) {
+    border-inline-start: 1px solid var(--md-default-fg-color--lightest);
+  }
+
+  .md-typeset .metric-grid div:nth-child(n + 3) {
+    border-block-start: 1px solid var(--md-default-fg-color--lightest);
+  }
+
+  .md-typeset .problem-nav {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .md-typeset .problem-nav > * {
+    text-align: start !important;
+  }
+}

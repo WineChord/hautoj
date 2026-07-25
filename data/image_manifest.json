@@ -1,0 +1,1592 @@
+{
+  "schema_version": 1,
+  "verified_through": "2026-07-25",
+  "limits": {
+    "max_image_bytes": 8388608,
+    "max_total_bytes": 67108864,
+    "max_redirects": 5
+  },
+  "summary": {
+    "references": 106,
+    "available": 65,
+    "unavailable": 41,
+    "mirrored_bytes": 21388906,
+    "unavailable_reasons": {
+      "data_uri_invalid_base64_length": 1,
+      "dns_resolution_failed": 1,
+      "http_status_404": 21,
+      "http_status_503": 3,
+      "private_or_special_address": 1,
+      "request_timeout": 1,
+      "tls_error": 13
+    }
+  },
+  "images": [
+    {
+      "problem_id": "1210",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "http://images.cnitblog.com/blog/568313/201401/172153465330.jpg",
+      "source_sha256": "d0e3171e3264f804a9579f9964118f6c8e1cc67316412898015b9dd07e8ab249",
+      "status": "unavailable",
+      "reason": "tls_error"
+    },
+    {
+      "problem_id": "1220",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "http://115.28.138.223/RequireFile.do?fid=gbLRbhR7",
+      "source_sha256": "d029d47cdd80583d09f63bcee4c74155aba046a61f60f65faef47fbe13936a04",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1230",
+      "image_index": 1,
+      "corpus_sources": [
+        "source"
+      ],
+      "source_type": "data_uri",
+      "source_url": null,
+      "source_sha256": "383259a97eabd1c7245d76512af014e0b7e52c81679099b02d4b76f20807d1fc",
+      "status": "available",
+      "path": "assets/problem-images/p1230-01-c06dadad9deb.jpg",
+      "media_type": "image/jpeg",
+      "bytes": 16224,
+      "sha256": "c06dadad9deb441a4970b9327dff52d020a0681c29635e13cbdb5a9068db90d5"
+    },
+    {
+      "problem_id": "1232",
+      "image_index": 1,
+      "corpus_sources": [
+        "source"
+      ],
+      "source_type": "data_uri",
+      "source_url": null,
+      "source_sha256": "d309bcb11661959ed53e8ed52a5d4f5f332cfc51bed5f44ee2bc0b53aff51b95",
+      "status": "available",
+      "path": "assets/problem-images/p1232-01-c65abda53472.png",
+      "media_type": "image/png",
+      "bytes": 1622,
+      "sha256": "c65abda53472fdd524cb8a93708c93b45aaed67e0dce9a93d1f13a78bd10988d"
+    },
+    {
+      "problem_id": "1244",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "http://img.51nod.com/upfile/000fbd24/08d196ad7e66babb0000000000000004.png",
+      "source_sha256": "b3c541e16583278f400f27564c64aae02ddfa8f82c625fee8aa3801aec9b9c1c",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1322",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/JudgeOnline/upload/image/20171104/20171104182858_95339.png",
+      "source_sha256": "ced58aad4a76abd331f1b6674e9ebf87dc764dd9dc5059a9d6c0246ea62bd4ce",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1323",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/JudgeOnline/upload/image/20171104/20171104211618_89873.jpeg",
+      "source_sha256": "ef977931e9482a5736cdab91b04f62457db943766d33793bf6adcef748813cce",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1324",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/JudgeOnline/upload/image/20171104/20171104183857_68218.png",
+      "source_sha256": "696d13764c2aa95d4c113837f40a1a90e3f522eb45563b0ee3babe85d2fd788f",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1325",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/JudgeOnline/upload/image/20171105/20171105171527_35395.png",
+      "source_sha256": "488b981b3ce5859df68041f0a1294f64b1894ad91b09eb229b1868f7d4446946",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1326",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/JudgeOnline/upload/image/20171104/20171104190201_14897.png",
+      "source_sha256": "6f814d61be90176af2439b30fb78e63e3d577cf31098229965fc45f5bb5a38bc",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1347",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/JudgeOnline/upload/image/20171203/20171203235532_84462.jpg",
+      "source_sha256": "577fecb0326ddf7552a24143b78e1a67b76750c0f14b1beb197cfe4c928f05c9",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1361",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/JudgeOnline/upload/image/20171222/20171222141552_35496.jpg",
+      "source_sha256": "d6a64b89a5da5d87a02a503d4eb9196f1466ecb3713972d3ac6ab1f2e81c6212",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1361",
+      "image_index": 2,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/JudgeOnline/upload/image/20171222/20171222142304_45663.png",
+      "source_sha256": "654f72cafa3577d940af7d040a922a52a1ac468189153b8f715684f4677a00f9",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1362",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/JudgeOnline/upload/image/20171222/20171222144122_38170.png",
+      "source_sha256": "0e3ec7bdcebda28ee679ca804fb8b8b270494d741b9c7cf76a9b445f02544719",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1362",
+      "image_index": 2,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/JudgeOnline/upload/image/20171222/20171222150101_54595.png",
+      "source_sha256": "8dabf34bd5e410c14b9dde7bb915e2e003089c0cdccd1b2cecb52dfd95f878ab",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1363",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/JudgeOnline/upload/image/20171222/20171222151602_61998.jpg",
+      "source_sha256": "f0ed9be33b0eef42d0ecb89b183a6ed2940a3988b906f1334397e43b1a3916ab",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1364",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/JudgeOnline/upload/image/20171222/20171222154224_10204.png",
+      "source_sha256": "720c4946c39a0095ab9ca2f8cdd95b3264fef5c7b6856563d237254124182d1d",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1364",
+      "image_index": 2,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/JudgeOnline/upload/image/20171222/20171222154536_17745.png",
+      "source_sha256": "71ae54b52a723051d0706d5b49f2d6c59b3de5aeb8ec725c016507304991e64c",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1366",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/JudgeOnline/upload/image/20171222/20171222161003_94236.png",
+      "source_sha256": "fbb480253bb9748090ebfc6b8d1db93602d5c034b1f267dd0a329a0b3c5a9760",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1367",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/JudgeOnline/upload/image/20171222/20171222162747_71197.jpg",
+      "source_sha256": "7ededed25bf13decb8afd8a437701c02878fd5f1fe560dcfdbf76313d18370aa",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1367",
+      "image_index": 2,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/JudgeOnline/upload/image/20171222/20171222165420_48542.png",
+      "source_sha256": "e0f12a4fb4340c9d2e3b8f610a711d7bfcde3c072572d2040a015e8cf4677877",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1369",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/JudgeOnline/upload/image/20171222/20171222181204_77887.png",
+      "source_sha256": "ec3445121f639f7ee96ae90a01d0128dafbbdb704e8c03f21371614105ba29a3",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1428",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "http://47.106.196.181/upload/pimg1219_1.png",
+      "source_sha256": "5d08d2f115de98863c6236b93e0fb1f9379355cc2d07cfeb3440b6c0834c90ce",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1432",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "http://47.106.196.181/upload/image/20181213/20181213190728_83523.png",
+      "source_sha256": "80dde104d0532cdd2167ea74075882174cdb76f8b6205d9343bac49951673637",
+      "status": "unavailable",
+      "reason": "http_status_404"
+    },
+    {
+      "problem_id": "1434",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "http://acm.zzuli.edu.cn/upload/image/20181214/20181214112945_48230.png",
+      "source_sha256": "e495476e892932640847e25231a66424a72f622bc2d9cd53624b76c62b081bda",
+      "status": "unavailable",
+      "reason": "http_status_503"
+    },
+    {
+      "problem_id": "1434",
+      "image_index": 2,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "http://acm.zzuli.edu.cn/upload/image/20181214/20181214113037_93440.png",
+      "source_sha256": "fcd1275b58eb63b902e21fae3ef4c0c0e2a814c3625940d291b6787ce5bb510a",
+      "status": "unavailable",
+      "reason": "http_status_503"
+    },
+    {
+      "problem_id": "1434",
+      "image_index": 3,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "http://acm.zzuli.edu.cn/upload/image/20181214/20181214113407_64721.png",
+      "source_sha256": "984557764c210fa75b0b02d1dd0b94efb2529b972bb758c9b3a9a7b510c571d8",
+      "status": "unavailable",
+      "reason": "http_status_503"
+    },
+    {
+      "problem_id": "1501",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/image/20191124/20191124120744_10903.png",
+      "source_sha256": "a9113e05644bf21af948d2fcf36ce5648c51bde9a86bab6e901fccd829467d08",
+      "status": "available",
+      "path": "assets/problem-images/p1501-01-84b9ee2af177.png",
+      "media_type": "image/png",
+      "bytes": 3913,
+      "sha256": "84b9ee2af17717c0aa101ee0845795eb9e41eedbf1d422eb6d2d21e20448ee9a"
+    },
+    {
+      "problem_id": "1516",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/image/20191207/20191207144332_72328.jpg",
+      "source_sha256": "75d37e3e148f247bf91719ef49c3f085ff5d4ef24f88645388816a63027013ed",
+      "status": "available",
+      "path": "assets/problem-images/p1516-01-a00cd8c09939.jpg",
+      "media_type": "image/jpeg",
+      "bytes": 87267,
+      "sha256": "a00cd8c099395ff432832155331952ded78999263999da6c890cfdb89aba3edf"
+    },
+    {
+      "problem_id": "1526",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://vj.z180.cn/1399dde8cfda6248dfda3472115477bd?v=1576122950",
+      "source_sha256": "1353b9e2a5e8015e9ba11a9520b61db21f4ce8e76b01ad63bafed0da18725fb3",
+      "status": "unavailable",
+      "reason": "dns_resolution_failed"
+    },
+    {
+      "problem_id": "1526",
+      "image_index": 2,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/image/20191215/20191215121908_27610.png",
+      "source_sha256": "d65f7d135c3b5a50d9cfa2373444d94647ef4b40addf1e3cf88dd289790cc340",
+      "status": "available",
+      "path": "assets/problem-images/p1526-02-8fe1188daaef.png",
+      "media_type": "image/png",
+      "bytes": 1029,
+      "sha256": "8fe1188daaef3e506d730ae65391dead2e251efbe5e40c85034aefddec8a0dc8"
+    },
+    {
+      "problem_id": "1526",
+      "image_index": 3,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/image/20191215/20191215122745_66074.png",
+      "source_sha256": "d5476fe0671417dc9bb228191cd87e3524794a88b3c19e50464ba9fb057c3009",
+      "status": "available",
+      "path": "assets/problem-images/p1526-03-fe76bde0d694.png",
+      "media_type": "image/png",
+      "bytes": 1102,
+      "sha256": "fe76bde0d694eefd365d2ff1f9401b4fe66782fa946f0f94931cbfde4381209c"
+    },
+    {
+      "problem_id": "1526",
+      "image_index": 4,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/image/20191215/20191215122912_84158.png",
+      "source_sha256": "bcda31544188d3d2ce236d981025456949b5577f88e4e4331c38b84c66d48ac6",
+      "status": "available",
+      "path": "assets/problem-images/p1526-04-356969283a00.png",
+      "media_type": "image/png",
+      "bytes": 1000,
+      "sha256": "356969283a00ec64721289bfd5669aec8c1b7ad10fd02e6d2c49ca39a97aded7"
+    },
+    {
+      "problem_id": "1529",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/pimg1529_1.jpg",
+      "source_sha256": "215d6780d0be9c543f34b6139623de7526202eb3c3c8c593bfa0024951bde74a",
+      "status": "available",
+      "path": "assets/problem-images/p1529-01-1bd2bf592a74.jpg",
+      "media_type": "image/jpeg",
+      "bytes": 40178,
+      "sha256": "1bd2bf592a7423150605e7196ed8f8895fdd385d77b7396e427a62a629905b2f"
+    },
+    {
+      "problem_id": "1547",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/image/20201209/20201209184855_39665.png",
+      "source_sha256": "ac4b56a410b4fba09945e92c9da249ed798f879dc8edc66094a7f2e80cab2360",
+      "status": "available",
+      "path": "assets/problem-images/p1547-01-0a99a7887c1a.png",
+      "media_type": "image/png",
+      "bytes": 7525,
+      "sha256": "0a99a7887c1ae9a4b37b441ba2f34d33369e3fca8585602271806f2b1a0f1528"
+    },
+    {
+      "problem_id": "1550",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/image/20201213/20201213135712_33357.jpg",
+      "source_sha256": "02e179fa3125d04ecf1a010fea3f777c838469e9fc5a19fa53ebb9f93fc41bbd",
+      "status": "available",
+      "path": "assets/problem-images/p1550-01-a65b2e76132c.jpg",
+      "media_type": "image/jpeg",
+      "bytes": 6280,
+      "sha256": "a65b2e76132c48a2fe221d13db72ada884923d76da297176c8f36ed7871caa0a"
+    },
+    {
+      "problem_id": "1550",
+      "image_index": 2,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/image/20201213/20201213135727_98595.png",
+      "source_sha256": "4162ced1bd8e3d9194c38346b39060d31c05f88539fbbce28afa0be8ea4e9c8e",
+      "status": "available",
+      "path": "assets/problem-images/p1550-02-1830c0e1938b.png",
+      "media_type": "image/png",
+      "bytes": 8596,
+      "sha256": "1830c0e1938b582931f4663eaa7394bb70a2dd683ea0d8a65e39789e05373573"
+    },
+    {
+      "problem_id": "1553",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/image/20201210/20201210124047_54321.png",
+      "source_sha256": "ed079f924bd28fe99bc5e1e0916d1efc5ea68a10fe045a0156a48f3e4b241a11",
+      "status": "available",
+      "path": "assets/problem-images/p1553-01-c9671c5856c8.png",
+      "media_type": "image/png",
+      "bytes": 7472,
+      "sha256": "c9671c5856c81aa931c8f3f353349276e99b1a6e77551aa65a5bbbddb0c9cf9d"
+    },
+    {
+      "problem_id": "1555",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/pimg1555_1.png",
+      "source_sha256": "6daee3e6950c35aa56deb18d731e0f29e45c42778fbeb538a4a34789b8755373",
+      "status": "available",
+      "path": "assets/problem-images/p1555-01-76f210d63bfa.png",
+      "media_type": "image/png",
+      "bytes": 15120,
+      "sha256": "76f210d63bfaa79d628a91566adfb1935377af66b90d1329c1dad76e26375f26"
+    },
+    {
+      "problem_id": "1557",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/pimg1557_1.jpg",
+      "source_sha256": "c1fd421a86c4bdf5a6f26b800fdb64248a73477a6e581d5f17ef04389501828a",
+      "status": "available",
+      "path": "assets/problem-images/p1557-01-3609b16ff5d5.jpg",
+      "media_type": "image/jpeg",
+      "bytes": 39758,
+      "sha256": "3609b16ff5d51403f35a010dea8542962fda69b731710221b9668a5cfbf96ee6"
+    },
+    {
+      "problem_id": "1558",
+      "image_index": 1,
+      "corpus_sources": [
+        "source"
+      ],
+      "source_type": "url",
+      "source_url": null,
+      "source_sha256": "0e52c641cb8c7ec2587d4542fcb7f657926cac3d43ec3f4849b8fbaacb247cd7",
+      "status": "unavailable",
+      "reason": "private_or_special_address"
+    },
+    {
+      "problem_id": "1561",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/pimg1561_1.png",
+      "source_sha256": "3269f7eea71033a1d63929e193a2aad091d44cb8fe4eccf60465f39ef0ee5bfa",
+      "status": "available",
+      "path": "assets/problem-images/p1561-01-9976bad1eb59.png",
+      "media_type": "image/png",
+      "bytes": 9785,
+      "sha256": "9976bad1eb59e6352973a3c2f8d199b24bae79be47194ecb9d61a7598175a272"
+    },
+    {
+      "problem_id": "1561",
+      "image_index": 2,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/pimg1561_2.png",
+      "source_sha256": "bffd1a75239a1d344d94b776813dbad0da7b3a66f65529e66fd21314fcbb2d00",
+      "status": "available",
+      "path": "assets/problem-images/p1561-02-7c207edf2ba9.png",
+      "media_type": "image/png",
+      "bytes": 10778,
+      "sha256": "7c207edf2ba94618e63d51eee5a0b200ca5415482d077e4e8dd80b30daaf536f"
+    },
+    {
+      "problem_id": "1561",
+      "image_index": 3,
+      "corpus_sources": [
+        "source"
+      ],
+      "source_type": "data_uri",
+      "source_url": null,
+      "source_sha256": "d07a422d1612f26d8e9186678039e4531af6fd0573083d8cd5fe8b8f0fe8303a",
+      "status": "available",
+      "path": "assets/problem-images/p1561-03-cbb172738bec.png",
+      "media_type": "image/png",
+      "bytes": 8712,
+      "sha256": "cbb172738bec13697293363d3b2652cec3a97874c93dbf630d1768b165b739fc"
+    },
+    {
+      "problem_id": "1561",
+      "image_index": 4,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/image/20201221/20201221190111_21392.png",
+      "source_sha256": "2c8d6a396f9ba6d75a1c05c1687f4ec1709f3e32ee07fa6a4599ace0a182b4e9",
+      "status": "available",
+      "path": "assets/problem-images/p1561-04-2983c8eb0c5e.png",
+      "media_type": "image/png",
+      "bytes": 12368,
+      "sha256": "2983c8eb0c5e1d819457886e85fc75777b3d452b4bc4efcbaee35b51038dde5e"
+    },
+    {
+      "problem_id": "1564",
+      "image_index": 1,
+      "corpus_sources": [
+        "source"
+      ],
+      "source_type": "embedded_data_uri",
+      "source_url": null,
+      "source_sha256": "d065fcedd46b6c4a2717825e95b93019c47c8c22954df0884f5ec04fac179e36",
+      "status": "unavailable",
+      "reason": "data_uri_invalid_base64_length"
+    },
+    {
+      "problem_id": "1564",
+      "image_index": 2,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/pimg1564_1.jpg",
+      "source_sha256": "a6f06200727f216fe25ec8d5d188103eb183924e7539ebcbd4b00769c2ac6787",
+      "status": "available",
+      "path": "assets/problem-images/p1564-02-4b91e5a7186a.jpg",
+      "media_type": "image/jpeg",
+      "bytes": 3659,
+      "sha256": "4b91e5a7186a7d3ae69ad45ea92fe03eb78af5f0049806cd4b4a1ab30729e31e"
+    },
+    {
+      "problem_id": "1570",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/pimg1570_1.jpg",
+      "source_sha256": "345149b4f4316d5d46e8f51b53dc467948c5c106dca159fab7e001dadac829bc",
+      "status": "available",
+      "path": "assets/problem-images/p1570-01-9dead5d1ad6d.jpg",
+      "media_type": "image/jpeg",
+      "bytes": 514759,
+      "sha256": "9dead5d1ad6d23e85ce3996d4cbe7543f3945214bbfbd38ee0551853b8de6422"
+    },
+    {
+      "problem_id": "1593",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/image/20211017/20211017171819_32514.jpg",
+      "source_sha256": "f2fc46734faa607a1d2985bdbf67906ddf7334ee625e385dff9abe9efcc72e90",
+      "status": "available",
+      "path": "assets/problem-images/p1593-01-b576c082a3df.jpg",
+      "media_type": "image/jpeg",
+      "bytes": 60297,
+      "sha256": "b576c082a3df7f0de09092a848d198e238c33eba8dcfc5a714835c94db013459"
+    },
+    {
+      "problem_id": "1595",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/image/20211007/20211007095759_93346.png",
+      "source_sha256": "b6ee207691bfbcef23e43fe8db9f27b2a1e01f925d332e6307f6d000aef11092",
+      "status": "available",
+      "path": "assets/problem-images/p1595-01-8e1c45038344.png",
+      "media_type": "image/png",
+      "bytes": 21815,
+      "sha256": "8e1c450383448efe83035ed423ea0ca975b0f20819877ef20e501ae600d298b9"
+    },
+    {
+      "problem_id": "1715",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://z3.ax1x.com/2021/11/10/IaLKe0.jpg",
+      "source_sha256": "19b1de6aeeccba99f07c48f46790400c73418fb0e0320b13598275aca1a596c1",
+      "status": "available",
+      "path": "assets/problem-images/p1715-01-d5f84ecf19b5.jpg",
+      "media_type": "image/jpeg",
+      "bytes": 72568,
+      "sha256": "d5f84ecf19b56fa3c07df0908aa5fe6176c5ae95fbc707a8cfc0a4181e323803"
+    },
+    {
+      "problem_id": "1726",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/image/20211124/20211124140330_87603.png",
+      "source_sha256": "0fec229af2a7ee7ca488ff552bb8bd983320a7df1451965b421824c39e4a4a21",
+      "status": "available",
+      "path": "assets/problem-images/p1726-01-b231a383ebe2.png",
+      "media_type": "image/png",
+      "bytes": 194511,
+      "sha256": "b231a383ebe210180b2f02b7b05dfe9afbbe4cdfad68d70a1ddf1a1812c828f5"
+    },
+    {
+      "problem_id": "1727",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/image/20211124/20211124141053_62868.jpg",
+      "source_sha256": "af155bc346c56288da0eb98c6e5dd35b9c7cd6a32a39c19ad702ef1b8999a3da",
+      "status": "available",
+      "path": "assets/problem-images/p1727-01-e882627ad35a.jpg",
+      "media_type": "image/jpeg",
+      "bytes": 64317,
+      "sha256": "e882627ad35a5d793033bf709308bd8b461c09c80eea3800a5dd5e4e8bea3879"
+    },
+    {
+      "problem_id": "1734",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/image/20211205/20211205184952_37626.png",
+      "source_sha256": "1ee8db798ff1e85949350710ebbe0403d40d7229404e7ec8155d82b1d5aba247",
+      "status": "available",
+      "path": "assets/problem-images/p1734-01-a546171db83e.png",
+      "media_type": "image/png",
+      "bytes": 63633,
+      "sha256": "a546171db83e42bdff86ca23552e20c39e47be1aca011923e1508df2c0cdf6d5"
+    },
+    {
+      "problem_id": "1735",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://verden.top/wp-content/uploads/2021/11/1.jpg",
+      "source_sha256": "314360acd31c5d5918ef52f4d458feab5951a4afedcc6b6221287db20fc27295",
+      "status": "unavailable",
+      "reason": "tls_error"
+    },
+    {
+      "problem_id": "1735",
+      "image_index": 2,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://verden.top/wp-content/uploads/2021/11/2.jpg",
+      "source_sha256": "34fcacad7c2f5f9b200622c08fc6ea52b161f7cb5bf3daa55269cc7f605b45c1",
+      "status": "unavailable",
+      "reason": "tls_error"
+    },
+    {
+      "problem_id": "1735",
+      "image_index": 3,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://verden.top/wp-content/uploads/2021/11/5.jpg",
+      "source_sha256": "850fb06acdc5f49c9441d665098a9903527c64bf032736fc78f54397fc4fc6a1",
+      "status": "unavailable",
+      "reason": "tls_error"
+    },
+    {
+      "problem_id": "1735",
+      "image_index": 4,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://verden.top/wp-content/uploads/2021/11/3.jpg",
+      "source_sha256": "c51c28a11f375ead4ab84d158380742ebdeda29d10ac7f42597b3b54f4b24691",
+      "status": "unavailable",
+      "reason": "tls_error"
+    },
+    {
+      "problem_id": "1735",
+      "image_index": 5,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://verden.top/wp-content/uploads/2021/11/4.jpg",
+      "source_sha256": "c65640726871d018db4139b4ef1f211bcbbbab985aec9214767057ff189de64f",
+      "status": "unavailable",
+      "reason": "tls_error"
+    },
+    {
+      "problem_id": "1735",
+      "image_index": 6,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://verden.top/wp-content/uploads/2021/11/6.jpg",
+      "source_sha256": "b8ef55b3067777899b89cf60b0bffce22a20092a08220883dac6e4cc8ca340a0",
+      "status": "unavailable",
+      "reason": "tls_error"
+    },
+    {
+      "problem_id": "1736",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://verden.top/wp-content/uploads/2021/12/94412776_p0_master1200.jpg",
+      "source_sha256": "af17ab41991ff9fa8ee5a5662ffb9657541116d3768f3f537ec80b0ab6b33ec5",
+      "status": "unavailable",
+      "reason": "tls_error"
+    },
+    {
+      "problem_id": "1737",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://verden.top/wp-content/uploads/2021/12/93798864_p0_master1200.jpg",
+      "source_sha256": "9f88e558b87d912f7445422287ce7d68eb23b81dfd993c6749ba8ff111ac7b2e",
+      "status": "unavailable",
+      "reason": "tls_error"
+    },
+    {
+      "problem_id": "1738",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://verden.top/wp-content/uploads/2021/12/93798864_p0_master1200.jpg",
+      "source_sha256": "9f88e558b87d912f7445422287ce7d68eb23b81dfd993c6749ba8ff111ac7b2e",
+      "status": "unavailable",
+      "reason": "tls_error"
+    },
+    {
+      "problem_id": "1739",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://verden.top/wp-content/uploads/2021/12/91801758_p0_master1200.jpg",
+      "source_sha256": "e98e88166d6cb64336778946dfe92d1c936923adc253498f6c587764e336024c",
+      "status": "unavailable",
+      "reason": "tls_error"
+    },
+    {
+      "problem_id": "1740",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://verden.top/wp-content/uploads/2021/12/91842494_p0_master1200.jpg",
+      "source_sha256": "0eb74d4199ed2e5e98ee3ebb9e214122e5b44abf038e1310282ec7110f03d605",
+      "status": "unavailable",
+      "reason": "tls_error"
+    },
+    {
+      "problem_id": "1741",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://verden.top/wp-content/uploads/2021/12/94265178_p0-scaled-e1638863403562.jpg",
+      "source_sha256": "e89d0b9bbc38470d2a7dd11649b0e387e9aa3722204b71b518dad77a08f188fb",
+      "status": "unavailable",
+      "reason": "tls_error"
+    },
+    {
+      "problem_id": "1744",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/image/20220107/20220107154400_69645.png",
+      "source_sha256": "075a7af673c139628313b78abc21b923604848f29cfe7d655572d1febeee8b79",
+      "status": "available",
+      "path": "assets/problem-images/p1744-01-246edd044000.png",
+      "media_type": "image/png",
+      "bytes": 29797,
+      "sha256": "246edd0440007809282c9443e98244d00d8ad73f08739ded480be93ba4df2b13"
+    },
+    {
+      "problem_id": "1745",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/image/20220107/20220107154807_41031.png",
+      "source_sha256": "cb4dce143594ed68030ffd100b3fc9f9f22785848500e357b7789b5bddec032f",
+      "status": "available",
+      "path": "assets/problem-images/p1745-01-813ded9edc67.png",
+      "media_type": "image/png",
+      "bytes": 181997,
+      "sha256": "813ded9edc67d036376bc94ab29229a65b78d4248d831252b838af6c69dc59fe"
+    },
+    {
+      "problem_id": "1745",
+      "image_index": 2,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/image/20220107/20220107162755_56929.jpg",
+      "source_sha256": "4a289949aa65ffb06bbb202586afba83db78f2483659d33e58709d368ce3e9ee",
+      "status": "available",
+      "path": "assets/problem-images/p1745-02-13b9c1028c59.jpg",
+      "media_type": "image/jpeg",
+      "bytes": 358455,
+      "sha256": "13b9c1028c59febf1ef21b7f1a7e725f048fb5d455604e38720b325f2b179642"
+    },
+    {
+      "problem_id": "1759",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20221031/20221031164756_58151.png",
+      "source_sha256": "2ff561202916afa1508e5a2ae6a70c80faccab81c0490b08a0e6af360cdc1dc5",
+      "status": "available",
+      "path": "assets/problem-images/p1759-01-2a5d08420d90.png",
+      "media_type": "image/png",
+      "bytes": 310892,
+      "sha256": "2a5d08420d9025f9e849ce8e585f661e6440cd3a9d91b61f649aa57dbd30e52c"
+    },
+    {
+      "problem_id": "1761",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20221031/20221031170550_52560.png",
+      "source_sha256": "fe9f298d54ddcb9c09c0a60e14e6673cce0d9b65b8c76a8f0bd176fa6aa9f2f1",
+      "status": "available",
+      "path": "assets/problem-images/p1761-01-6384945c98b0.png",
+      "media_type": "image/png",
+      "bytes": 260573,
+      "sha256": "6384945c98b0235437f13fa76bced86f6d6cb08330c9c98af22bb735b549f823"
+    },
+    {
+      "problem_id": "1766",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20221102/20221102172132_77723.png",
+      "source_sha256": "6937789914dc517e07f603eed5610d64dfcd2940108a8ccfc71db0f0542cbc6a",
+      "status": "available",
+      "path": "assets/problem-images/p1766-01-f859ae905cd6.png",
+      "media_type": "image/png",
+      "bytes": 8090,
+      "sha256": "f859ae905cd631f6a1f71921db7cc9025bb53a218d1937767c995f1c17d10567"
+    },
+    {
+      "problem_id": "1770",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20221114/20221114204237_92553.png",
+      "source_sha256": "b844659562c6af233b5b319f0458a154fe464337cea04fd68acaa7a1bec0da2d",
+      "status": "available",
+      "path": "assets/problem-images/p1770-01-d2811325783e.png",
+      "media_type": "image/png",
+      "bytes": 517469,
+      "sha256": "d2811325783e1a9787a6f46c73b527a79a0f7e25095ea1708a13fcb5e6a01d4c"
+    },
+    {
+      "problem_id": "1771",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20221114/20221114210210_48257.png",
+      "source_sha256": "0322a0f3cdb76ca4307dadedf456a7c1e15c009a7f801fb53c15044bfcdfbb3f",
+      "status": "available",
+      "path": "assets/problem-images/p1771-01-91a9485323ff.png",
+      "media_type": "image/png",
+      "bytes": 759720,
+      "sha256": "91a9485323ff03d90389a2bd4d363ff9629b40a2efc8f8722c3c07127c7d03dc"
+    },
+    {
+      "problem_id": "1772",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20221114/20221114220010_97842.png",
+      "source_sha256": "6653183e16d3ca569ef33e30ea8fc432739e5991f50fe3f8e8b0c4b78de379d7",
+      "status": "available",
+      "path": "assets/problem-images/p1772-01-1e9d76d3dc84.png",
+      "media_type": "image/png",
+      "bytes": 690043,
+      "sha256": "1e9d76d3dc84163fbb7004dee220cd2d3c8f85b131df155cc23321c437d7460a"
+    },
+    {
+      "problem_id": "1773",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20221114/20221114221153_21361.png",
+      "source_sha256": "585e36e28e0574a10b0407d5504629cd6a35f6985c0b588d691c98a0558afad1",
+      "status": "available",
+      "path": "assets/problem-images/p1773-01-8202b389c8d3.png",
+      "media_type": "image/png",
+      "bytes": 608667,
+      "sha256": "8202b389c8d30aac505779c7952424d0ddb84b3b2c7cf3f287e505fcb644dae2"
+    },
+    {
+      "problem_id": "1774",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20221114/20221114223011_54945.png",
+      "source_sha256": "96c3c8d187e6298eb3512d7675d2fa4b00fa8319ecd3f283557c844d435e2f88",
+      "status": "available",
+      "path": "assets/problem-images/p1774-01-049b6d78c33a.png",
+      "media_type": "image/png",
+      "bytes": 492680,
+      "sha256": "049b6d78c33aacaf8b87b7e1d30a4bb2e2f31f97604f41ba0b5284edddab6afe"
+    },
+    {
+      "problem_id": "1775",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20221114/20221114195005_20605.png",
+      "source_sha256": "475822200b2e494ef161cb1f52a06ee051ad804c7e28085a8821f477e28d0e30",
+      "status": "available",
+      "path": "assets/problem-images/p1775-01-388ac3b25f28.png",
+      "media_type": "image/png",
+      "bytes": 350765,
+      "sha256": "388ac3b25f28b81a1dece3fe310ccdef36093b0df8c570f3078e35c1dcb2f751"
+    },
+    {
+      "problem_id": "1775",
+      "image_index": 2,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20221109/20221109101428_11781.png",
+      "source_sha256": "664fb922319eb7bec4c6f140f0c22918bbd359ea2348c240c8e4cd911036b703",
+      "status": "available",
+      "path": "assets/problem-images/p1775-02-3d7b887bf2d5.png",
+      "media_type": "image/png",
+      "bytes": 49376,
+      "sha256": "3d7b887bf2d557559c82550bebf44fb607044d23c2ae0d05efc0b7f1807456e4"
+    },
+    {
+      "problem_id": "1776",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20221114/20221114200303_18380.jpg",
+      "source_sha256": "34d6240ce74dcb5ea81bfe71e7ddfed8661a596d0a94148e1e6ab8854bd162a1",
+      "status": "available",
+      "path": "assets/problem-images/p1776-01-4ca81ecf22f6.png",
+      "media_type": "image/png",
+      "bytes": 731887,
+      "sha256": "4ca81ecf22f61af17dca168bd79d3340931d93070867b87560ea3676eb87b803"
+    },
+    {
+      "problem_id": "1777",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20221114/20221114202823_19244.jpg",
+      "source_sha256": "310a3417fcb255b2bd53ca38989f1543235b36604a9465ddd2a6e0f26521a907",
+      "status": "available",
+      "path": "assets/problem-images/p1777-01-cdc5e8b0dff3.png",
+      "media_type": "image/png",
+      "bytes": 1696633,
+      "sha256": "cdc5e8b0dff3eeeda9dd6a47669d54154de4a3a5854a0a678d8bbd79250ed730"
+    },
+    {
+      "problem_id": "1851",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20231119/20231119144748_37293.png",
+      "source_sha256": "ee53bf0390a08fb69a48b535b7c046102e6cf62c3ade8fd415b28a6973b96a2f",
+      "status": "available",
+      "path": "assets/problem-images/p1851-01-fffc35b871b0.png",
+      "media_type": "image/png",
+      "bytes": 32224,
+      "sha256": "fffc35b871b068cfa2258084be837f62e7afb872b62f30520ff73e58c6e28588"
+    },
+    {
+      "problem_id": "1863",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20241102/20241102004927_60912.png",
+      "source_sha256": "41a61107e373575c94b78ae9e99ae4dc2e9b544a6fe04f21aee60f0af00f854d",
+      "status": "available",
+      "path": "assets/problem-images/p1863-01-7ccfc0d8a161.png",
+      "media_type": "image/png",
+      "bytes": 12781,
+      "sha256": "7ccfc0d8a161de86caab233841052d4a21f9a5f6dbe23b556d33649eef44fd7e"
+    },
+    {
+      "problem_id": "1879",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20241118/20241118230846_50675.png",
+      "source_sha256": "d6dfedaf652e478a59cf2a5e273cbe58d79e319423866d4784f87c296e85d77e",
+      "status": "available",
+      "path": "assets/problem-images/p1879-01-33387c808b32.png",
+      "media_type": "image/png",
+      "bytes": 2363441,
+      "sha256": "33387c808b32b469eab5692fe06c2c84cce0cbb05693e50e1b5eff6dc4c84fbd"
+    },
+    {
+      "problem_id": "1880",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20241116/20241116175833_18328.png",
+      "source_sha256": "d552f649ca7f600f9ec310303e8736c820ce2cf65681adee28ecccb4ba77344d",
+      "status": "available",
+      "path": "assets/problem-images/p1880-01-c663d6434c73.png",
+      "media_type": "image/png",
+      "bytes": 333075,
+      "sha256": "c663d6434c73085838ec549f6140f12e98c29c5d94ef0616ea7e4b2edb7dd3ae"
+    },
+    {
+      "problem_id": "1881",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20241116/20241116180453_94916.png",
+      "source_sha256": "39a5a7fb4ae93a753b5eef664df512e1c6aa3936470e807f6a03e80850093db8",
+      "status": "available",
+      "path": "assets/problem-images/p1881-01-5bccd4c8b909.png",
+      "media_type": "image/png",
+      "bytes": 4949418,
+      "sha256": "5bccd4c8b9095103fb079918ffc5830f05f6f6bba542a3a7da3e77dc59bc3a3a"
+    },
+    {
+      "problem_id": "1882",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20241116/20241116180548_85871.jpg",
+      "source_sha256": "22294db7aa51c47c11132db1aba8d0e1792219d6fab4baccfe2d4ea21548b489",
+      "status": "available",
+      "path": "assets/problem-images/p1882-01-218c4430b173.jpg",
+      "media_type": "image/jpeg",
+      "bytes": 185415,
+      "sha256": "218c4430b1736f317fe4a8da60e703799456a0389dfaa615ef863884756add56"
+    },
+    {
+      "problem_id": "1883",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20241116/20241116144022_63792.png",
+      "source_sha256": "4ba13a117338d1d54a036a4794386b3bf037cd4f127cf1c081b9c5a36600652e",
+      "status": "available",
+      "path": "assets/problem-images/p1883-01-004a03f9f63e.png",
+      "media_type": "image/png",
+      "bytes": 272857,
+      "sha256": "004a03f9f63eb32f932a6795ef0326c9bc26cea0d1e7d5dafa8364eca3fbf94d"
+    },
+    {
+      "problem_id": "1884",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20241116/20241116161050_46634.png",
+      "source_sha256": "628728b94a980687769ff0b7d75f37a911b638a6903e200eddb8abf46ba20b20",
+      "status": "available",
+      "path": "assets/problem-images/p1884-01-ac2ec4c21789.png",
+      "media_type": "image/png",
+      "bytes": 643834,
+      "sha256": "ac2ec4c21789ac517a7818dc07ca9031f740e3589987f74d57d8c868355dba5a"
+    },
+    {
+      "problem_id": "1885",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20241116/20241116172451_82893.png",
+      "source_sha256": "1c9d5bf03e104405bd21ad1ddbf9d8a568fa7d707c94896f1f8c8c2814dbb564",
+      "status": "available",
+      "path": "assets/problem-images/p1885-01-72ce398efe4a.png",
+      "media_type": "image/png",
+      "bytes": 86615,
+      "sha256": "72ce398efe4a0690df9bc7730b55ecad7d9a1fc989c33435a26058b192a5bc80"
+    },
+    {
+      "problem_id": "1886",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20241116/20241116175019_10411.png",
+      "source_sha256": "1b5157ece163b30d58fad770ee1e364b977942dc42989ab905f6a271a4c47e1f",
+      "status": "available",
+      "path": "assets/problem-images/p1886-01-b1dd2750e0b1.png",
+      "media_type": "image/png",
+      "bytes": 550566,
+      "sha256": "b1dd2750e0b13ef669b9fe74e474e2e58d3d66fe595aaa9f6f11962789a0100d"
+    },
+    {
+      "problem_id": "1886",
+      "image_index": 2,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20241116/20241116175030_34163.png",
+      "source_sha256": "45e8cc18e70efb99cdaa07e4db5d00b0f2eb1b5e512548d3f96f34e0cfce917b",
+      "status": "available",
+      "path": "assets/problem-images/p1886-02-7614f8b25dfd.png",
+      "media_type": "image/png",
+      "bytes": 460237,
+      "sha256": "7614f8b25dfd2c1a749e51a84a2e343ba438e9a1dcceb9e0210d3b7304bd27df"
+    },
+    {
+      "problem_id": "1890",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20241126/20241126194857_96048.png",
+      "source_sha256": "05b2742ca6204624cace9a7af98cadac296d44cd0b179e168862c6168e510787",
+      "status": "available",
+      "path": "assets/problem-images/p1890-01-aeae13b9fa08.png",
+      "media_type": "image/png",
+      "bytes": 8847,
+      "sha256": "aeae13b9fa08b3ad3c8b0c4c0260da1041b713e6a463975543cc67b7a8959f16"
+    },
+    {
+      "problem_id": "1894",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/kindeditor/plugins/emoticons/images/69.gif",
+      "source_sha256": "a0143b8d8290e0acb1fa7636c726a6e42c8f9d844ed3759d26491c2fe86fb228",
+      "status": "available",
+      "path": "assets/problem-images/p1894-01-e876a36dca66.gif",
+      "media_type": "image/gif",
+      "bytes": 1015,
+      "sha256": "e876a36dca66432285817b7b460b8b95ba4681bd467be70c73140a366d2d5869"
+    },
+    {
+      "problem_id": "1902",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20241129/20241129133748_64516.png",
+      "source_sha256": "1f5bd7f97bb24ff6bf75bb3645482236f44a50678e84109e9812dcb92ad7f903",
+      "status": "available",
+      "path": "assets/problem-images/p1902-01-bf6f054d7f17.png",
+      "media_type": "image/png",
+      "bytes": 5929,
+      "sha256": "bf6f054d7f1771c91a3aff31f94aabd2ff86ac613a24cbbe9b7264f1b22e0090"
+    },
+    {
+      "problem_id": "1904",
+      "image_index": 1,
+      "corpus_sources": [
+        "source"
+      ],
+      "source_type": "data_uri",
+      "source_url": null,
+      "source_sha256": "129fd3ff50dad4e0646d5d60d9a8c0b9a9caabb677ca26e999f6bbb5fc10eada",
+      "status": "available",
+      "path": "assets/problem-images/p1904-01-7831c5bfa5ee.png",
+      "media_type": "image/png",
+      "bytes": 7689,
+      "sha256": "7831c5bfa5ee36419a6f52c33868ba0f3e74946c52fe2394e0172f12f7d63216"
+    },
+    {
+      "problem_id": "1908",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://uploadfiles.nowcoder.com/images/20240717/0_1721222558208/A6A7444B4AD14220473A3CCBE9350640",
+      "source_sha256": "7344101e15d6c5032ff0728b5a5cd4b27d0b1b03bb8b87ea13ba794862f79ec9",
+      "status": "available",
+      "path": "assets/problem-images/p1908-01-ce9cf0f647aa.jpg",
+      "media_type": "image/jpeg",
+      "bytes": 34190,
+      "sha256": "ce9cf0f647aa23b0fba3313e35e402d90cb8ba715b90e93dd403dac9f4d5629c"
+    },
+    {
+      "problem_id": "1924",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20251028/20251028093642_89960.png",
+      "source_sha256": "614c8929061b95af52747a96302a88cc71e72b73de7ea55cbe5181989c0e5cce",
+      "status": "available",
+      "path": "assets/problem-images/p1924-01-e386e23cef4c.png",
+      "media_type": "image/png",
+      "bytes": 118296,
+      "sha256": "e386e23cef4cfa52c0af17e3a1522e442546102aec5c45648c849206e3906f8a"
+    },
+    {
+      "problem_id": "1940",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20251111/20251111133204_27828.png",
+      "source_sha256": "c85ba9d5f513eb3b3979705f6a43bb3d748b0086bd6ca1db70053506c6d6ade0",
+      "status": "available",
+      "path": "assets/problem-images/p1940-01-9a9c10260376.png",
+      "media_type": "image/png",
+      "bytes": 16201,
+      "sha256": "9a9c10260376ced546859b591350989cd8ed9d52484f0183713c50fe91d00ab2"
+    },
+    {
+      "problem_id": "1942",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20251104/20251104142756_94892.png",
+      "source_sha256": "0362cc8a7a71fe46d94843955c774d0be775ab9cb606f2f3f872d52220625eb6",
+      "status": "available",
+      "path": "assets/problem-images/p1942-01-4351b72348b6.png",
+      "media_type": "image/png",
+      "bytes": 9114,
+      "sha256": "4351b72348b605a36aaf8cd66ec7d4b26219f12b4dcddc5a2ce9830943df1d7c"
+    },
+    {
+      "problem_id": "1942",
+      "image_index": 2,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/19618e3fd361790722409455594640b0d28b805d",
+      "source_sha256": "e580135454390c641287cf23e97d772792c4cf6f3fef4e9b955f1704f26b8cc0",
+      "status": "unavailable",
+      "reason": "request_timeout"
+    },
+    {
+      "problem_id": "1942",
+      "image_index": 3,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20251104/20251104142829_50200.gif",
+      "source_sha256": "7382753ea5771c35b079a74e8250482fb065e5a8bbd93bba599d9048f7a6c72f",
+      "status": "available",
+      "path": "assets/problem-images/p1942-03-3a4efa19080d.gif",
+      "media_type": "image/gif",
+      "bytes": 2472173,
+      "sha256": "3a4efa19080d0a5fff5f74515b426ce268def3dd92c92ac6d28fa0bb77f3d4cb"
+    },
+    {
+      "problem_id": "1948",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20251113/20251113133200_52671.jpg",
+      "source_sha256": "75d1ee2724f9ca451c4bc15fad25935f38c4368869c5a8ec3c5e14236dd20040",
+      "status": "available",
+      "path": "assets/problem-images/p1948-01-62875d5fff2d.png",
+      "media_type": "image/png",
+      "bytes": 332012,
+      "sha256": "62875d5fff2d6688dd833de054e66b84d8f291912a99721a550a6a4d6ecbb0b3"
+    },
+    {
+      "problem_id": "1966",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20251118/20251118134849_98431.png",
+      "source_sha256": "f66865d2fd235a4950852c6361c647d376960816336085578140ea281aee132e",
+      "status": "available",
+      "path": "assets/problem-images/p1966-01-1ba3c8236f0e.png",
+      "media_type": "image/png",
+      "bytes": 11662,
+      "sha256": "1ba3c8236f0e2bfb3bed797c3e85102f0a51b72cea2ea25295da70def5d12114"
+    },
+    {
+      "problem_id": "1978",
+      "image_index": 1,
+      "corpus_sources": [
+        "source"
+      ],
+      "source_type": "data_uri",
+      "source_url": null,
+      "source_sha256": "3990572ee00a465581d139a9ab3ab13365d30cae71e90f6070f2595f00d85d79",
+      "status": "available",
+      "path": "assets/problem-images/p1978-01-fe705955da1d.png",
+      "media_type": "image/png",
+      "bytes": 23194,
+      "sha256": "fe705955da1dbcf47a601fef37d8bab793cd93d1645a1fd8c7f4a8c7e5f7ff09"
+    },
+    {
+      "problem_id": "1983",
+      "image_index": 1,
+      "corpus_sources": [
+        "source",
+        "public"
+      ],
+      "source_type": "url",
+      "source_url": "https://acm.haut.edu.cn/upload/acm.haut.edu.cn/image/20251215/20251215153128_40038.png",
+      "source_sha256": "3694258889675eeb4ee7a8c7bfc20f21ed557fcbef4342f03d9d3781b2d65e96",
+      "status": "available",
+      "path": "assets/problem-images/p1983-01-fdc51543ffe1.png",
+      "media_type": "image/png",
+      "bytes": 136789,
+      "sha256": "fdc51543ffe11aa37271242224348f6f09026d862424e442b9f6e08c94d602cf"
+    }
+  ]
+}

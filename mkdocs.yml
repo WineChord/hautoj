@@ -1,0 +1,128 @@
+site_name: HAUTOJ
+site_description: 河南工业大学 HAUTOJ 新生周赛题解与算法竞赛训练资料
+site_author: WineChord
+site_url: https://www.wineandchord.com/hautoj/
+repo_name: WineChord/hautoj
+repo_url: https://github.com/WineChord/hautoj
+edit_uri: edit/main/docs/
+copyright: Copyright &copy; 2026 WineChord
+
+theme:
+  name: material
+  language: zh
+  icon:
+    logo: material/code-braces
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: 切换至深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至浅色模式
+  font: false
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.path
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - tags
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      base_path:
+        - .
+      check_paths: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/WineChord
+      name: WineChord on GitHub
+
+nav:
+  - 首页: index.md
+  - 按周赛:
+      - 周赛索引: contests/index.md
+  - 按知识:
+      - 知识体系: topics/index.md
+      - 语法、输入输出与格式: topics/syntax-io.md
+      - 模拟、枚举与构造: topics/simulation-enumeration.md
+      - 数组、字符串与双指针: topics/arrays-strings.md
+      - 排序、二分与区间: topics/sorting-binary-search.md
+      - 数学、数论与组合: topics/math-number-theory.md
+      - 贪心与博弈: topics/greedy-games.md
+      - 数据结构: topics/data-structures.md
+      - 动态规划: topics/dynamic-programming.md
+      - 搜索、图论与树: topics/search-graphs-trees.md
+      - 几何、概率与综合: topics/geometry-probability.md
+  - 学习方法:
+      - 16 周训练路线: guide/roadmap.md
+      - 竞赛 C++17: guide/cpp.md
+      - printf 与 setprecision: guide/precision.md
+      - 周赛作答与复盘: guide/strategy.md
+  - 题解索引: problems/index.md
+  - 离线下载: downloads/index.md
+  - 收录边界: methodology.md
+  - 来源: sources.md
+  - 更新日志: changelog.md
