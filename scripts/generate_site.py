@@ -420,14 +420,14 @@ def pitfall_lines(problem: dict) -> list[str]:
 def validation_label(pid: int, validations: dict) -> str:
     result = validations["problems"][str(pid)]
     if not result.get("compiled"):
-        return "C++17 编译核验未通过"
+        return "C++14 编译核验未通过"
     status = result.get("sample_status")
     if status == "passed":
         count = result.get("sample_passes", 0)
-        return f"C++17 编译通过；{count} 个可机读公开样例/合法构造校验通过"
+        return f"C++14 编译通过；{count} 个可机读公开样例/合法构造校验通过"
     if status == "unavailable_or_non_machine_readable":
-        return "C++17 编译通过；公开样例不可机读，未执行"
-    return "C++17 编译通过；未提供成对公开样例"
+        return "C++14 编译通过；公开样例不可机读，未执行"
+    return "C++14 编译通过；未提供成对公开样例"
 
 
 def code_origin(problem: dict) -> str:
@@ -466,7 +466,7 @@ def snippet_markdown(problem: dict, validations: dict, image_manifest: dict) -> 
     pitfalls = "；".join(pitfall_lines(problem))
     validation = validation_label(problem["pid"], validations)
     lines = [
-        '??? problem "展开：题意、思路、证明、复杂度与 C++17 代码"',
+        '??? problem "展开：题意、思路、证明、复杂度与 C++14 代码"',
         f"    **题目**：{prose(problem['title'])}",
         "",
         f"    {official}{{ .problem-source target=\"_blank\" rel=\"noopener\" }}",
@@ -486,7 +486,7 @@ def snippet_markdown(problem: dict, validations: dict, image_manifest: dict) -> 
     ]
     lines.extend(
         [
-        "    **C++17 实现**",
+        "    **C++14 实现**",
         "",
         code,
         ]
@@ -594,7 +594,7 @@ def problem_page(
     lines.extend(
         [
             "",
-            "## 题目摘要与 C++17 参考实现",
+            "## 题目摘要与 C++14 参考实现",
             "",
             f'--8<-- "includes/problems/haut-{pid}.md"',
             "",
@@ -720,7 +720,7 @@ def contest_page(contest: dict, corpus: dict, previous: dict | None, next_: dict
     else:
         lines.extend(
             [
-                "本页按比赛原始题号顺序排列。每题的折叠区给出题意、核心思路、复杂度和完整 C++17 实现；标题旁可进入更详细的规范题解页。",
+                "本页按比赛原始题号顺序排列。每题的折叠区给出题意、核心思路、复杂度和完整 C++14 实现；标题旁可进入更详细的规范题解页。",
                 "",
             ]
         )
@@ -769,7 +769,7 @@ def contest_index(corpus: dict) -> str:
         "# 新生周赛：从最新到最早",
         "",
         "共收录 78 场新生周赛，其中 76 场题目公开、2 场需要竞赛密码。"
-        "进入比赛页后，可按原题号顺序展开题意、核心思路、复杂度和 C++17 实现。",
+        "进入比赛页后，可按原题号顺序展开题意、核心思路、复杂度和 C++14 实现。",
         "",
         "!!! note \"使用建议\"",
         "    第一次打开一场比赛时，先不要展开答案。按 A、B、C 的顺序限时作答，卡住后再展开对应题目的摘要。",
@@ -904,7 +904,7 @@ def homepage(corpus: dict, validations: dict) -> str:
 
 ## 核验状态
 
-- C++17 编译：{validations["compiled"]}/{validations["problem_count"]}。
+- C++14 编译：{validations["compiled"]}/{validations["problem_count"]}。
 - 至少一个可机读公开样例或合法构造通过：{validations["sample_pass_problem_count"]} 道。
 - 无成对样例或样例不可机读：{validations["sample_unavailable_problem_count"]} 道，页面逐题明确标注，不把“未执行”写成“已通过”。
 - 语料核验日期：{corpus["verified_through"]}。
@@ -946,7 +946,7 @@ def guide_pages() -> dict[str, str]:
 4. 24 小时内补完有方向的题，72 小时内从空文件重写关键题。
 5. 一周后不看题解重做；能说明正确性与复杂度才算掌握。
 """,
-        "guide/cpp.md": r"""# 竞赛 C++17
+        "guide/cpp.md": r"""# 竞赛 C++14
 
 ## 最小骨架
 
@@ -965,11 +965,16 @@ int main() {
 
 ## 代码风格
 
-- 每份代码完整、可编译，使用 C++17。
+- 每份代码完整、可编译，使用 C++14。
 - 变量名采用常见竞赛缩写，例如 `n`、`m`、`ans`、`cnt`、`pre`、`dis`。
 - 二元运算符两侧保留空格；`if (`、`for (`、逗号后保留常规空格。
 - 代码块内部不放空行，缩进 4 空格，不使用 Tab。
 - 先保证含义清楚，再追求短；不要把不同概念压成同一个字母。
+
+!!! info "HAUTOJ 当前公开编译环境"
+    [HAUTOJ 常见问答](https://acm.haut.edu.cn/faqs.php)列出的 C++ 编译器为
+    `g++ 9.4.0`，评测参数包含 `-std=c++14 -O2 -DONLINE_JUDGE`。
+    平台同时提示版本仅供参考，因此本站以 GNU C++14 作为最低兼容门槛。
 
 ## 常用数据类型
 
@@ -983,7 +988,7 @@ int main() {
 ## 本地编译
 
 ```bash
-g++ -std=c++17 -O2 -pipe main.cpp -o main
+g++ -std=c++14 -O2 -pipe main.cpp -o main
 ./main
 ```
 
@@ -1092,7 +1097,9 @@ def methodology_page(corpus: dict, validations: dict) -> str:
 
 ## 代码与样例
 
-- 526/526 份参考代码通过 C++17 编译。
+- 526/526 份参考代码通过 C++14 编译。
+- 编译标准依据 [HAUTOJ 常见问答](https://acm.haut.edu.cn/faqs.php)公开的
+  `g++ 9.4.0` 与 `-std=c++14` 参数设置。
 - {validations["sample_pass_problem_count"]} 道题至少有一个可机读公开样例或合法构造完成执行核验。
 - {validations["sample_unavailable_problem_count"]} 道题没有成对样例，或样例不可机读；页面逐题标注“未执行”原因。
 - 公开样例通过不等于隐藏数据必然 AC，学习时仍应在原 OJ 提交验证。
@@ -1133,6 +1140,11 @@ def sources_page(corpus: dict) -> str:
     ]
     lines = [
         "# 来源",
+        "",
+        "## HAUTOJ 评测环境",
+        "",
+        "- [常见问答与编译参数](https://acm.haut.edu.cn/faqs.php)："
+        "C++ 使用 g++ 9.4.0，评测参数包含 `-std=c++14`。",
         "",
         "## HAUTOJ 新生周赛列表",
         "",
@@ -1250,7 +1262,7 @@ def build() -> None:
 ## {corpus["verified_through"]}
 
 - 建立 78 场新生周赛、588 个题目位置与 526 道唯一题的双路径知识库。
-- 增加逐题规范页、默认折叠摘要、C++17 高亮代码、精确样例核验状态和离线下载。
+- 增加逐题规范页、默认折叠摘要、C++14 高亮代码、精确样例核验状态和离线下载。
 - 增加周赛时间顺序、10 个知识模块、16 周路线、竞赛 C++ 与浮点输出专题。
 """,
     )

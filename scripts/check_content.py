@@ -105,13 +105,13 @@ def expected_validation_line(record: dict[str, Any]) -> str:
     status = record.get("sample_status")
     if status == "passed":
         return (
-            "- 核验状态：C++17 编译通过；"
+            "- 核验状态：C++14 编译通过；"
             f"{record.get('sample_passes')} 个可机读公开样例/合法构造校验通过"
         )
     if status == "unavailable_or_non_machine_readable":
-        return "- 核验状态：C++17 编译通过；公开样例不可机读，未执行"
+        return "- 核验状态：C++14 编译通过；公开样例不可机读，未执行"
     if status == "not_available":
-        return "- 核验状态：C++17 编译通过；未提供成对公开样例"
+        return "- 核验状态：C++14 编译通过；未提供成对公开样例"
     return ""
 
 
@@ -458,7 +458,7 @@ def validate_pages(
             "正确性说明",
             "复杂度",
             "易错点",
-            "题目摘要与 C++17 参考实现",
+            "题目摘要与 C++14 参考实现",
             "链接与来源",
         )
         for heading in required_headings:

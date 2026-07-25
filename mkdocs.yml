@@ -118,7 +118,7 @@ nav:
       - 几何、概率与综合: topics/geometry-probability.md
   - 学习方法:
       - 16 周训练路线: guide/roadmap.md
-      - 竞赛 C++17: guide/cpp.md
+      - 竞赛 C++14: guide/cpp.md
       - printf 与 setprecision: guide/precision.md
       - 周赛作答与复盘: guide/strategy.md
   - 题解索引: problems/index.md

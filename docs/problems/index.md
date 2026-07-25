@@ -287,8 +287,8 @@
 | 1707 | [子序列和](1707.md) | 进阶 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
 | 1708 | [对称括号序列](1708.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1709 | [爱因斯坦光电效应](1709.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
-| 1710 | [图书馆信息管理系统](1710.md) | 基础提高 | [入门语法、输入输出与格式](../topics/syntax-io.md) | 1 |
-| 1711 | [这年头难道有人不喜欢签到吗？](1711.md) | 进阶 | [入门语法、输入输出与格式](../topics/syntax-io.md) | 1 |
+| 1710 | [图书馆信息管理系统](1710.md) | 基础提高 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
+| 1711 | [这年头难道有人不喜欢签到吗？](1711.md) | 进阶 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
 | 1712 | [lsjp和他的小伙伴们](1712.md) | 入门 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |
 | 1713 | [lwjq与国际象棋](1713.md) | 进阶 | [数组、字符串与双指针](../topics/arrays-strings.md) | 1 |
 | 1714 | [lzlf的三角形绝技](1714.md) | 进阶 | [数学、数论与组合](../topics/math-number-theory.md) | 1 |

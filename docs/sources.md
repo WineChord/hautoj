@@ -1,5 +1,9 @@
 # 来源
 
+## HAUTOJ 评测环境
+
+- [常见问答与编译参数](https://acm.haut.edu.cn/faqs.php)：C++ 使用 g++ 9.4.0，评测参数包含 `-std=c++14`。
+
 ## HAUTOJ 新生周赛列表
 
 - [周赛列表第 1 页](<https://acm.haut.edu.cn/contest.php?page=1>)

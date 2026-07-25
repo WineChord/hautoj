@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check every published C++ solution for contest style and GNU C++17 syntax."""
+"""Check every published C++ solution for contest style and GNU C++14 syntax."""
 
 from __future__ import annotations
 
@@ -254,7 +254,17 @@ def compiler_name() -> str | None:
 
 def compile_block(compiler: str, block: CodeBlock) -> tuple[CodeBlock, str]:
     result = subprocess.run(
-        [compiler, "-std=gnu++17", "-fsyntax-only", "-x", "c++", "-"],
+        [
+            compiler,
+            "-std=c++14",
+            "-O2",
+            "-Wall",
+            "-DONLINE_JUDGE",
+            "-fsyntax-only",
+            "-x",
+            "c++",
+            "-",
+        ],
         input=block.source,
         capture_output=True,
         text=True,
@@ -343,7 +353,7 @@ def main() -> None:
             except subprocess.TimeoutExpired:
                 reporter.add(
                     f"{relative(block.path)}:{block.line}",
-                    "C++17 语法检查超过 30 秒",
+                    "C++14 语法检查超过 30 秒",
                 )
                 continue
             except OSError as error:
@@ -352,14 +362,14 @@ def main() -> None:
             if diagnostic:
                 reporter.add(
                     f"{relative(block.path)}:{block.line}",
-                    f"GNU C++17 编译失败\n{diagnostic}",
+                    f"GNU C++14 编译失败\n{diagnostic}",
                 )
 
     reporter.finish()
     print(
         "C++ 检查通过："
         f"{len(canonical)} 个唯一题解、{len(compile_targets)} 个完整程序通过 "
-        f"GNU C++17；{len(all_blocks)} 个代码块通过空行、Tab、92 字符与竞赛空格检查；"
+        f"GNU C++14；{len(all_blocks)} 个代码块通过空行、Tab、92 字符与竞赛空格检查；"
         f"编译器 {compiler}"
     )
 
