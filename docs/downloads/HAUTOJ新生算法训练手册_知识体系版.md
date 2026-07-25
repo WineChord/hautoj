@@ -125,6 +125,9 @@ HAUTOJ 常见问答公开的评测参数包含 `g++ 9.4.0`、`-std=c++14`、`-O2
 和 `-DONLINE_JUDGE`，因此本手册按 GNU C++14 做最低兼容核验：
 <https://acm.haut.edu.cn/faqs.php>
 
+使用 `cin/cout` 时保留下面的加速设置，普通换行优先写 `'\n'`；`gets`
+已从当前环境删除，C++ 读取整行应使用 `getline(cin, s)`。
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
