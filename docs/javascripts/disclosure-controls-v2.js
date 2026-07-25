@@ -96,6 +96,11 @@
   }
 
   function insertControl(article) {
+    const existing = article.querySelector(
+      `:scope > [data-disclosure-controls] .${BUTTON_CLASS}`
+    );
+    if (existing) return existing;
+
     const controls = document.createElement("div");
     controls.className = CONTROL_CLASS;
 

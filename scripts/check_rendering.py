@@ -396,30 +396,36 @@ def validate_expected_routes(
 
 
 def validate_runtime_assets(errors: list[str]) -> None:
-    css_path = ROOT / "docs" / "stylesheets" / "extra.css"
+    css_path = ROOT / "docs" / "stylesheets" / "extra-v2.css"
     math_script_path = ROOT / "docs" / "javascripts" / "mathjax.js"
     disclosure_script_path = (
-        ROOT / "docs" / "javascripts" / "disclosure-controls.js"
+        ROOT / "docs" / "javascripts" / "disclosure-controls-v2.js"
     )
+    disclosure_template_path = ROOT / "overrides" / "main.html"
     config_path = ROOT / "mkdocs.yml"
     if not css_path.is_file():
-        errors.append("docs/stylesheets/extra.css is missing")
+        errors.append("docs/stylesheets/extra-v2.css is missing")
     else:
         css = css_path.read_text(encoding="utf-8")
         if "--md-code-font" not in css:
-            errors.append("extra.css does not define the Material code font")
+            errors.append("extra-v2.css does not define the Material code font")
         if not re.search(r"Noto Sans (?:Mono )?CJK SC", css):
-            errors.append("extra.css lacks an explicit CJK code-font fallback")
+            errors.append(
+                "extra-v2.css lacks an explicit CJK code-font fallback"
+            )
         if "overflow-x: auto" not in css:
-            errors.append("extra.css does not make long code horizontally scrollable")
+            errors.append(
+                "extra-v2.css does not make long code horizontally scrollable"
+            )
         for marker in (
             ".disclosure-controls__toggle",
             "details.code-disclosure",
             "max-width: 100%",
+            "position: fixed",
         ):
             if marker not in css:
                 errors.append(
-                    f"extra.css is missing disclosure style marker {marker}"
+                    f"extra-v2.css is missing disclosure style marker {marker}"
                 )
     if not math_script_path.is_file():
         errors.append("docs/javascripts/mathjax.js is missing")
@@ -429,7 +435,7 @@ def validate_runtime_assets(errors: list[str]) -> None:
             if marker not in script:
                 errors.append(f"mathjax.js is missing {marker}")
     if not disclosure_script_path.is_file():
-        errors.append("docs/javascripts/disclosure-controls.js is missing")
+        errors.append("docs/javascripts/disclosure-controls-v2.js is missing")
     else:
         script = disclosure_script_path.read_text(encoding="utf-8")
         for marker in (
@@ -441,17 +447,32 @@ def validate_runtime_assets(errors: list[str]) -> None:
         ):
             if marker not in script:
                 errors.append(
-                    "disclosure-controls.js is missing required marker "
+                    "disclosure-controls-v2.js is missing required marker "
                     f"{marker}"
+                )
+    if not disclosure_template_path.is_file():
+        errors.append("overrides/main.html is missing")
+    else:
+        template = disclosure_template_path.read_text(encoding="utf-8")
+        for marker in (
+            "data-disclosure-controls",
+            "disclosure-controls__toggle",
+            "正在检查可展开内容",
+        ):
+            if marker not in template:
+                errors.append(
+                    f"overrides/main.html is missing disclosure marker {marker}"
                 )
     if not config_path.is_file():
         errors.append("mkdocs.yml is missing")
-    elif "javascripts/disclosure-controls.js" not in config_path.read_text(
-        encoding="utf-8"
-    ):
-        errors.append(
-            "mkdocs.yml does not load javascripts/disclosure-controls.js"
-        )
+    else:
+        config = config_path.read_text(encoding="utf-8")
+        for asset in (
+            "stylesheets/extra-v2.css",
+            "javascripts/disclosure-controls-v2.js",
+        ):
+            if asset not in config:
+                errors.append(f"mkdocs.yml does not load {asset}")
 
 
 class QuietHandler(SimpleHTTPRequestHandler):
@@ -879,11 +900,13 @@ def browser_audit(
                                     : "",
                                   controlNearTop: control
                                     ? (
-                                        heading
-                                          ? heading.nextElementSibling
+                                        article.firstElementChild
+                                          === control.parentElement
+                                        || (
+                                          heading
+                                          && heading.nextElementSibling
                                             === control.parentElement
-                                          : article.firstElementChild
-                                            === control.parentElement
+                                        )
                                       )
                                     : false,
                                   cpp: cpp.length,
@@ -930,8 +953,8 @@ def browser_audit(
                                 )
                             if not stats["controlNearTop"]:
                                 errors.append(
-                                    f"{label}: disclosure control is not directly "
-                                    "below the article heading"
+                                    f"{label}: disclosure control is not near "
+                                    "the start of the article"
                                 )
                             if not stats["controlText"]:
                                 errors.append(

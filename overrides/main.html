@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div
+    class="disclosure-controls"
+    data-disclosure-controls
+    aria-live="polite"
+  >
+    <button
+      class="disclosure-controls__toggle"
+      type="button"
+      aria-expanded="false"
+      disabled
+    >
+      正在检查可展开内容…
+    </button>
+  </div>
+  {% include "partials/content.html" %}
+{% endblock %}

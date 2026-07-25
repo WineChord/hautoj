@@ -9,6 +9,7 @@ copyright: Copyright &copy; 2026 WineChord
 
 theme:
   name: material
+  custom_dir: overrides
   language: zh
   icon:
     logo: material/code-braces
@@ -88,10 +89,10 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra_css:
-  - stylesheets/extra.css
+  - stylesheets/extra-v2.css
 
 extra_javascript:
-  - javascripts/disclosure-controls.js
+  - javascripts/disclosure-controls-v2.js
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
 

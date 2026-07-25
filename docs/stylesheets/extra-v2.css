@@ -91,17 +91,30 @@
 .md-typeset .disclosure-controls {
   display: flex;
   justify-content: flex-end;
-  margin: -0.25rem 0 1rem;
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 8;
+  margin: 0;
+  pointer-events: none;
+}
+
+.md-content__inner {
+  padding-bottom: 4rem;
 }
 
 .md-typeset .disclosure-controls__toggle {
   min-height: 2.25rem;
+  min-width: 9rem;
   max-width: 100%;
   padding: 0.35rem 0.75rem;
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 0.2rem;
-  color: var(--md-accent-fg-color);
-  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-accent-fg-color);
+  border-radius: 1.25rem;
+  color: var(--md-primary-bg-color);
+  background: var(--md-accent-fg-color);
+  box-shadow:
+    0 0.15rem 0.35rem rgb(0 0 0 / 14%),
+    0 0.4rem 1rem rgb(0 0 0 / 12%);
   font: inherit;
   font-size: 0.76rem;
   font-weight: 600;
@@ -109,15 +122,11 @@
   text-align: center;
   overflow-wrap: anywhere;
   cursor: pointer;
+  pointer-events: auto;
 }
 
 .md-typeset .disclosure-controls__toggle:hover {
-  border-color: var(--md-accent-fg-color);
-  background: color-mix(
-    in srgb,
-    var(--md-accent-fg-color) 7%,
-    var(--md-default-bg-color)
-  );
+  filter: brightness(0.94);
 }
 
 .md-typeset .disclosure-controls__toggle:focus-visible {
@@ -131,6 +140,7 @@
   background: var(--md-default-bg-color);
   cursor: default;
   opacity: 0.75;
+  filter: none;
 }
 
 .md-typeset details.code-disclosure {
@@ -143,7 +153,8 @@
 }
 
 .md-typeset details.code-disclosure > summary {
-  padding: 0.55rem 0.75rem;
+  padding-block: 0.55rem;
+  padding-inline: 2rem;
   color: var(--md-default-fg-color--light);
   background: color-mix(
     in srgb,
@@ -203,15 +214,8 @@
   }
 
   .md-typeset .disclosure-controls {
-    justify-content: stretch;
-    margin-block-start: 0;
+    right: max(0.75rem, env(safe-area-inset-right));
+    bottom: max(0.75rem, env(safe-area-inset-bottom));
   }
 
-  .md-typeset .disclosure-controls__toggle {
-    width: 100%;
-  }
-
-  .md-typeset details.code-disclosure > summary {
-    padding-inline: 0.65rem;
-  }
 }
