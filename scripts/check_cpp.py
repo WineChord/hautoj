@@ -158,6 +158,11 @@ def check_spacing(
             reporter.add(location, "C++ 代码块不能包含空行")
         if "\t" in line:
             reporter.add(location, "C++ 代码不得使用 Tab 缩进")
+        if any(
+            char.isspace() and char not in {" ", "\t"}
+            for char in line
+        ):
+            reporter.add(location, "C++ 代码不得使用全角或其他非 ASCII 空白")
         if line.rstrip() != line:
             reporter.add(location, "C++ 代码行末不得保留空白")
         if enforce_line_width and len(line) > 92:

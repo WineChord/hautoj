@@ -10311,8 +10311,8 @@ signed main() {
     for (int i = 0; i < res; i++) {
         if (hashs[i]) // 如果数组中存在该值或存在取模后为该值的元素
         {
-            　　　　　　 //选择+1后判断方案数
-                hashs[i]--;
+            // 选择+1后判断方案数
+            hashs[i]--;
             hashs[(i + 1) % res]++;
             maxx = max(maxx, solve());
             // 回溯 ， 复原该元素未+1前的hash表状态
@@ -10833,8 +10833,8 @@ void printPrime(int n) {
                     // 输出i
                     cout << i << ' ';
                 }
-                　　　　　　　　 //如果i不是x的质因数 ， 重新循环
-                    else {
+                // 如果i不是x的质因数 ， 重新循环
+                else {
                     continue;
                 }
             }
