@@ -185,7 +185,15 @@ long long sum = pre[r] - pre[l - 1];
 #### 最大公约数与最小公倍数
 
 ```cpp
-long long g = gcd(a, b);
+long long gcdValue(long long a, long long b) {
+    while (b != 0) {
+        long long r = a % b;
+        a = b;
+        b = r;
+    }
+    return a;
+}
+long long g = gcdValue(a, b);
 long long l = a / g * b; // 先除再乘，仍要检查范围
 ```
 
@@ -29532,7 +29540,7 @@ int main() {
 
 #### 零基础先修
 
-- std::gcd(a,b) 返回最大公约数，并满足 gcd(a,b)=gcd(b,a mod b)。
+- 手写欧几里得算法求最大公约数，并利用 gcd(a,b)=gcd(b,a mod b)。
 
 #### 思路推导
 
@@ -31651,7 +31659,7 @@ G T
 #### 零基础先修
 
 - 数论常用整除、gcd/lcm、质数、同余；乘法前要判断是否需要 long long 或 __int128。
-- std::gcd(a,b) 返回最大公约数，并满足 gcd(a,b)=gcd(b,a mod b)。
+- 手写欧几里得算法求最大公约数，并利用 gcd(a,b)=gcd(b,a mod b)。
 - 解析字符串时先确定分隔符、字符类别和多位数边界，再逐段转换。
 
 #### 思路推导
@@ -31800,7 +31808,7 @@ int main() {
 #### 零基础先修
 
 - 数论常用整除、gcd/lcm、质数、同余；乘法前要判断是否需要 long long 或 __int128。
-- std::gcd(a,b) 返回最大公约数，并满足 gcd(a,b)=gcd(b,a mod b)。
+- 手写欧几里得算法求最大公约数，并利用 gcd(a,b)=gcd(b,a mod b)。
 - 解析字符串时先确定分隔符、字符类别和多位数边界，再逐段转换。
 
 #### 思路推导
@@ -34647,7 +34655,7 @@ y=2x+2
 
 #### 零基础先修
 
-- std::gcd(a,b) 返回最大公约数，并满足 gcd(a,b)=gcd(b,a mod b)。
+- 手写欧几里得算法求最大公约数，并利用 gcd(a,b)=gcd(b,a mod b)。
 
 #### 思路推导
 
@@ -35159,7 +35167,7 @@ int main() {
 
 #### 零基础先修
 
-- std::gcd(a,b) 返回最大公约数，并满足 gcd(a,b)=gcd(b,a mod b)。
+- 手写欧几里得算法求最大公约数，并利用 gcd(a,b)=gcd(b,a mod b)。
 
 #### 思路推导
 
@@ -36816,7 +36824,7 @@ nananananananana
 #### 零基础先修
 
 - 数论常用整除、gcd/lcm、质数、同余；乘法前要判断是否需要 long long 或 __int128。
-- std::gcd(a,b) 返回最大公约数，并满足 gcd(a,b)=gcd(b,a mod b)。
+- 手写欧几里得算法求最大公约数，并利用 gcd(a,b)=gcd(b,a mod b)。
 - 构造题输出不唯一；答案必须逐条满足长度、取值、互异、和或相邻关系等全部约束。
 
 #### 思路推导
@@ -37049,7 +37057,7 @@ n，k＞=1
 
 - 构造题输出不唯一；答案必须逐条满足长度、取值、互异、和或相邻关系等全部约束。
 - 数论常用整除、gcd/lcm、质数、同余；乘法前要判断是否需要 long long 或 __int128。
-- std::gcd(a,b) 返回最大公约数，并满足 gcd(a,b)=gcd(b,a mod b)。
+- 手写欧几里得算法求最大公约数，并利用 gcd(a,b)=gcd(b,a mod b)。
 
 #### 思路推导
 
@@ -41438,7 +41446,7 @@ int main() {
 
 #### 零基础先修
 
-- std::gcd(a,b) 返回最大公约数，并满足 gcd(a,b)=gcd(b,a mod b)。
+- 手写欧几里得算法求最大公约数，并利用 gcd(a,b)=gcd(b,a mod b)。
 - 贪心需要证明局部选择能延伸到全局最优，常用交换论证或下界与构造相遇。
 - 构造题输出不唯一；答案必须逐条满足长度、取值、互异、和或相邻关系等全部约束。
 
@@ -44477,7 +44485,7 @@ int main() {
 #### 零基础先修
 
 - 数论常用整除、gcd/lcm、质数、同余；乘法前要判断是否需要 long long 或 __int128。
-- std::gcd(a,b) 返回最大公约数，并满足 gcd(a,b)=gcd(b,a mod b)。
+- 手写欧几里得算法求最大公约数，并利用 gcd(a,b)=gcd(b,a mod b)。
 - 先确定终止态和每步改变的量，再判断奇偶、不变量或必胜/必败状态。
 
 #### 思路推导
@@ -52907,7 +52915,7 @@ staywithyou
 #### 零基础先修
 
 - 先用一句话定义 dp 状态，再写转移来源、初值、遍历顺序和最终答案。
-- std::gcd(a,b) 返回最大公约数，并满足 gcd(a,b)=gcd(b,a mod b)。
+- 手写欧几里得算法求最大公约数，并利用 gcd(a,b)=gcd(b,a mod b)。
 
 #### 思路推导
 
