@@ -52,6 +52,16 @@ VIEWPORTS = ((1440, 1000, False, "desktop"), (390, 844, True, "mobile"))
 PALETTES = (("default", "light"), ("slate", "dark"))
 
 
+def ignorable_console_error(message: str) -> bool:
+    """Ignore Material's optional latest-release probe when no release exists."""
+
+    return (
+        "https://api.github.com/repos/WineChord/hautoj/releases/latest"
+        in message
+        and "404" in message
+    )
+
+
 @dataclass
 class PageFacts:
     path: Path
@@ -831,6 +841,7 @@ def browser_audit(
                                 item["message"]
                                 for item in logs
                                 if item["level"] == "SEVERE"
+                                and not ignorable_console_error(item["message"])
                             ]
                             if severe:
                                 errors.append(
